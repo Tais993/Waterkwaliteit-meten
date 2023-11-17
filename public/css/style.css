@@ -1,0 +1,671 @@
+:root {
+    --blue-color: #109BFF;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+body {
+    margin: 0;
+    font-family: Mako, sans-serif;
+    background: #FFF !important;
+}
+
+nav {
+    overflow: hidden;
+    max-width: 80%;
+    margin: 0 auto;
+    height: 8rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+nav .right {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+nav .right a {
+    margin-left: 70px;
+}
+
+nav a, nav div a {
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 0.2rem 0.4rem;
+}
+
+.nav-logo a {
+    font-family: Koulen, sans-serif;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+.nav-logo img {
+    width: 3rem;
+    height: 3rem;
+    margin: auto;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    background: #fff;
+    transition: width 300ms;
+}
+
+nav a:hover::after {
+    width: 100%;
+    transition: width 300ms;
+}
+
+.bg-vid {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    object-fit: cover;
+    height: 32rem;
+}
+
+.bg-vid-sm {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    object-fit: cover;
+    height: 8rem;
+}
+
+#hero h1 {
+    color: #fff;
+    font-family: Koulen, sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#hero p {
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 40rem;
+    margin: 1rem auto;
+}
+
+.switch-label {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    width: 13.75rem;
+    height: 3.125rem;
+    margin: 10rem auto 5rem auto;
+    border-radius: 1.25rem;
+}
+
+.switch-label input[type=checkbox] {
+    opacity: 0;
+    position: absolute;
+}
+
+.switch-label input[type=checkbox]+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #D9D9D9;
+    border-radius: 1.25rem;
+}
+.switch-label input[type=checkbox]+.back .toggle {
+    position: absolute;
+    background: var(--blue-color);
+    width: 50%;
+    height: 80%;
+    transition: margin-left 150ms linear;
+    border-radius: 0.9375rem;
+    margin: 5px;
+}
+.switch-label input[type=checkbox]:checked+.back .toggle {
+    margin-left: 48%;
+}
+.switch-label .label {
+    position: absolute;
+    width: 50%;
+    color: #fff;
+    text-align: center;
+    font-size: 2.25rem;
+    font-family: Koulen, sans-serif;
+    user-select: none;
+    transition: color 150ms;
+}
+.switch-label .label.data {
+    left: 0px;
+}
+
+.switch-label .label.info {
+    right: 0px;
+}
+
+.switch-label input[type=checkbox]:checked+.back .label.data {
+    color: #AAA;
+    transition: color 150ms;
+}
+.switch-label input[type=checkbox ]+.back .label.info {
+    color: #AAA;
+    transition: color 150ms;
+}
+.switch-label input[type=checkbox]:checked+.back .label.info {
+    color: #FFF;
+    transition: color 150ms;
+}
+
+#data-cards {
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#data-cards a {
+    text-decoration: none;
+    color: #000;
+}
+
+.data-card {
+    width: 23.75rem;
+    height: 37.5rem;
+    border-radius: 0.625rem;
+    background: #D9D9D9;
+    border: 0;
+    transition: box-shadow 500ms;
+    margin: 0 auto;
+}
+
+.data-card:hover, .info-card:hover {
+    box-shadow: 0 0.05rem 8px 0 rgba(0, 0, 0, 0.3), 0 0.05rem 8px 0 rgba(0, 0, 0, 0.3);
+    transition: box-shadow 500ms;
+}
+
+.data-img {
+    width: 17.5rem;
+    height: 17.5rem;
+    margin: 2.88rem 3.13rem;
+}
+
+.data-card img {
+    max-width: 17.5rem;
+    max-height: 17.5rem;
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+
+.data-card h2 {
+    font-family: Koulen, sans-serif;
+    font-size: 2.25rem;
+    margin-top: 3rem;
+    margin-left: 3.13rem;
+}
+
+.data-card button {
+    display: block;
+    border: none;
+    border-radius: 0.625rem;
+    background: var(--blue-color);
+    width: 12.5rem;
+    margin: 0 auto;
+    font-family: Koulen, sans-serif;
+    font-size: 2.25rem;
+    text-align: center;
+}
+
+.data-card button a span {
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.data-card button a span:after {
+    content: ' >';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.data-card button:hover a span {
+    padding-right: 25px;
+}
+
+.data-card button:hover a span:after {
+    opacity: 1;
+    right: 0;
+}
+
+#info-cards {
+    max-width: 80%;
+    margin: 0 auto;
+    display: none;
+    justify-content: space-evenly;
+}
+
+.info-card {
+    width: 36.25rem;
+    height: 37.5rem;
+    border-radius: 0.625rem;
+    background: #D9D9D9;
+    border: 0;
+    transition: box-shadow 500ms;
+}
+
+.info-title {
+    width: 100%;
+    height: 10rem;
+    margin-bottom: 3.69rem;
+    position: relative;
+}
+
+.info-title img {
+    max-width: 100%;
+    max-height: 10rem;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+}
+
+.info-title div {
+    color: #FFF;
+    font-family: Koulen;
+    font-size: 3rem;
+    position: absolute;
+    bottom: 2rem;
+    left: 2.5rem;
+}
+
+.info-card #content {
+    width: 26.25rem;
+    height: 20.5rem;
+    margin: 0 auto;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.info-card #content p {
+    color: #000;
+}
+
+.info-card #content img {
+    max-width: 25.25rem;
+    max-height: 20.5rem;
+    width: 100%;
+    height: 91%;
+    object-fit: contain;
+}
+
+.info-card #content a {
+    text-decoration: none;
+    color: #000;
+    font-family: Koulen, sans-serif;
+}
+
+#about, #contact {
+    max-width: 80%;
+    margin: 5rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+.big-card {
+    width: 61.25rem;
+    height: 41rem;
+    border-radius: 0.625rem;
+    background: #D9D9D9;
+    border: 0;
+    transition: box-shadow 500ms;
+}
+
+.big-card-title img {
+    max-width: 100%;
+    max-height: 10rem;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+}
+
+#contact .big-card-title img {
+    object-position: 0 39%;
+}
+
+.big-card-title div {
+    color: #FFF;
+    font-family: Koulen;
+    font-size: 3rem;
+    position: absolute;
+    top: 17rem;
+    left: 23rem;
+}
+
+.big-card #content {
+    max-width: 44.3rem;
+    max-height: 20.5rem;
+    width: 100%;
+    height: 100%;
+    margin: 3.12rem auto;
+}
+
+.big-card #content p {
+    color: #000;
+}
+
+footer {
+    margin-top: 5rem;
+    background: #080808;
+    height: 9.625rem;
+    width: 100%;
+    padding: 2.75rem;
+}
+
+footer h2 {
+    color: var(--blue-color);
+    font-size: 2rem;
+    font-family: Koulen, sans-serif;
+    text-align: center;
+}
+
+footer ul {
+    margin: 0 auto;
+    max-width: 60%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 1.5rem;
+}
+
+footer ul li a:hover {
+    color: #fff;
+}
+
+#contact button {
+    display: block;
+    border: none;
+    border-radius: 0.625rem;
+    background: var(--blue-color);
+    width: 12.5rem;
+    margin: 2.7rem auto;
+    font-family: Koulen, sans-serif;
+    font-size: 2.25rem;
+    text-align: center;
+}
+
+#contact button a span {
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#contact button a span:after {
+    content: ' >';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#contact button:hover a span {
+    padding-right: 25px;
+}
+
+#contact button:hover a span:after {
+    opacity: 1;
+    right: 0;
+}
+
+#country {
+    max-width: 80%;
+    margin: 5rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+.country-card {
+    width: 61.25rem;
+    height: 62.5rem;
+    border-radius: 0.625rem;
+    background: #D9D9D9;
+    border: 0;
+    transition: box-shadow 500ms;
+}
+
+.country-card-title img {
+    max-width: 100%;
+    max-height: 10rem;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+}
+
+.senegal .country-card-title img {
+    object-position: 0 39%;
+}
+
+.haiti .country-card-title img {
+    object-position: 0 30%;
+}
+
+.country-card-title div {
+    color: #FFF;
+    font-family: Koulen;
+    font-size: 3rem;
+    position: absolute;
+    top: 17rem;
+    left: 23rem;
+}
+
+.country-card #content p {
+    color: #000;
+}
+
+.country-card #content {
+    width: 80%;
+    margin: 3.12rem auto;
+}
+
+.country-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3.12rem;
+}
+
+.country-info img {
+    width: 6.25rem;
+    height: 6.25rem;
+    margin: 2rem 1rem;
+}
+
+.country-data h2 {
+    font-family: Koulen, sans-serif;
+    color: #000;
+    font-size: 2.25rem;
+}
+
+table button {
+    border: none;
+    border-radius: 0.625rem;
+    background: var(--blue-color);
+    width: 7.4rem;
+    margin: 0 auto;
+    font-family: Koulen, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+
+table button span {
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+table button span:after {
+    content: '>';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    transition: 0.5s;
+}
+
+table button:hover span {
+    padding-right: 15px;
+}
+
+table button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.country-card .table {
+    background-color: #D9D9D9 !important;
+}
+
+.table-wrapper {
+    max-height: 25rem;
+    width: 100%;
+    overflow: auto;
+    display:inline-block;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 0;
+    max-width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 0.625rem;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Modal Header */
+.modal-header {
+    border: none;
+    color: white;
+    max-width: 100%;
+    max-height: 10rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+}
+
+.modal-header img {
+    max-width: 100%;
+    max-height: 10rem;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+}
+
+.modal-title {
+    color: #FFF;
+    font-family: Koulen;
+    font-size: 2.25rem;
+    position: absolute;
+    top: 2rem;
+    left: 5rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0.1rem;
+    right: 1.5rem;
+}
+
+
+/* The Close Button */
+.close {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #d9d9d9;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Body */
+.modal-body {
+    border: none;
+    max-width: 60%;
+    height: 30rem;
+    margin: 0 auto;
+    padding-top: 5rem;
+}
+
+.modal-body .table > :not(caption) > * > * {
+    padding: 0.5rem 0.5rem;
+    background-color: #fff;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
