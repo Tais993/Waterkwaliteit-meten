@@ -142,15 +142,15 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td scope="row">Temperature</th>
+                    <td scope="row">Temperature</td>
                     <td>8°C</td>
                 </tr>
                 <tr>
-                    <td scope="row">pH</th>
-                    <td>7.5</td>
+                    <td scope="row">pH</td>
+                    <td>{{ $pHValue }}</td>
                 </tr>
                 <tr>
-                    <td scope="row">Waterflow</th>
+                    <td scope="row">Waterflow</td>
                     <td>0.5 m/s</td>
                 </tr>
                 </tbody>

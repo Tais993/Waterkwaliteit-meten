@@ -493,8 +493,8 @@ footer ul li a:hover {
     font-family: Koulen;
     font-size: 3rem;
     position: absolute;
-    top: 17rem;
-    left: 23rem;
+    margin-left: 5rem;
+    margin-top: -6rem;
 }
 
 .country-card #content p {
@@ -572,22 +572,19 @@ table button:hover span:after {
     display:inline-block;
 }
 
-
-/* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
-/* Modal Content */
 .modal-content {
     position: relative;
     background-color: #fff;
@@ -600,7 +597,6 @@ table button:hover span:after {
     animation-duration: 0.4s
 }
 
-/* Modal Header */
 .modal-header {
     border: none;
     color: white;
@@ -635,22 +631,18 @@ table button:hover span:after {
     right: 1.5rem;
 }
 
-
-/* The Close Button */
 .close {
     color: #fff;
     font-size: 3rem;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: #d9d9d9;
     text-decoration: none;
     cursor: pointer;
 }
 
-/* Modal Body */
 .modal-body {
     border: none;
     max-width: 60%;
@@ -664,7 +656,6 @@ table button:hover span:after {
     background-color: #fff;
 }
 
-/* Add Animation */
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
     to {top: 0; opacity: 1}

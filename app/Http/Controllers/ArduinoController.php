@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -11,7 +12,6 @@ class ArduinoController extends Controller
 {
     public function store(Request $request): JsonResponse
     {
-
         $data = $request->all();
         $tabel = $data['tabel'];
 
@@ -20,15 +20,25 @@ class ArduinoController extends Controller
 
         if (Schema::hasTable($tabel)) {
 
-            unset($data['tabel']); // verwijder tabel uit de data array zodat het niet gestuurd word naar de database
-            $data['gemaakt_op'] = now();
+            unset($data['tabel']);
+            $data['created_at'] = now();
+            $data['updated_at'] = now();
 
-            // Store the data in the corresponding table
             DB::table($tabel)->insert($data);
 
             return response()->json(['message' => 'Data successvol opgeslagen']);
         } else {
             return response()->json(['message' => 'tabel bestaat niet'], 400);
         }
+    }
+
+    public function getMeasuredData(): View
+    {
+        $latestMeasurement = DB::table('resultaten')
+            ->orderBy('created_at', 'desc')
+            ->first('waarde');
+
+        $pHValue = $latestMeasurement->waarde;
+        return view('countries/senegal', ['pHValue' => $pHValue]);
     }
 }
