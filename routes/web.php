@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ArduinoController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,11 +38,13 @@ Route::get('/landen/laos', function () {
     return view('countries/laos');
 });
 
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/landen/senegal', [ArduinoController::class, 'getMeasuredData']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/product-aanmaken', [App\Http\Controllers\ProductController::class, 'create']);

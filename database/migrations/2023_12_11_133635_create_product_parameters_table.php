@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('controle_resultaten', function (Blueprint $table) {
+        Schema::create('product_parameters', function (Blueprint $table) {
             $table->id();
-            $table->timestamp("gemaakt_op");
 
             $table->unsignedBigInteger("parameter_id");
-            $table->unsignedBigInteger("controle_groep_id");
+            $table->unsignedBigInteger("product_id");
 
-            $table->double("waarde");
+            $table->timestamps();
 
             $table->foreign("parameter_id")->references("id")->on("parameters");
-            $table->foreign("controle_groep_id")->references("id")->on("controle_groepen");
+            $table->foreign("product_id")->references("id")->on("products");
         });
     }
 
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('controle_resultaten');
+        Schema::dropIfExists('product_parameters');
     }
 };

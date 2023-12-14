@@ -15,9 +15,6 @@ class ArduinoController extends Controller
         $data = $request->all();
         $tabel = $data['tabel'];
 
-        $tableColumns = Schema::getColumnListing($tabel);
-        var_dump($tableColumns);
-
         if (Schema::hasTable($tabel)) {
 
             unset($data['tabel']);

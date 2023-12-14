@@ -14,12 +14,8 @@ return new class extends Migration
         Schema::create('waterbronnen', function (Blueprint $table) {
             $table->id();
             $table->timestamp("gemaakt_op");
-            $table->unsignedBigInteger("controle_groep_id");
-
             $table->string("naam");
             $table->string("land");
-
-            $table->foreign("controle_groep_id")->references("id")->on("controle_groepen");
         });
     }
 
