@@ -136,12 +136,12 @@
   
     <footer>
       <h2>EXPLORE</h2>
-      <ul>
-        <li><a href="./index.html">HOME</a></li>
-        <li><a href="./store.html">STORE</a></li>
-        <li><a href="./about.html">ABOUT</a></li>
-        <li><a href="./contact.html">CONTACT</a></li>
-      </ul>
+        <ul>
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./store.html">STORE</a></li>
+          <li><a href="./about.html">ABOUT</a></li>
+          <li><a href="./contact.html">CONTACT</a></li>
+        </ul>
     </footer>
   
     <script src="./main.js"></script>
