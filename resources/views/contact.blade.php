@@ -20,43 +20,29 @@
         <video autoplay playsinline muted loop class="bg-vid-sm">
           <source src="./images/bg.mp4" type="video/mp4">
         </video>
-    
-        <nav>
-          <div class="nav-logo">
-            <a href="./index.html">
-              <img src="./images/5.png"> AQUALITY
-            </a>
-          </div>
-            <div class="right">
-              <a href="./store.html">STORE</a>
-              <a href="./about.html">ABOUT</a>
-              <a href="./contact.html">CONTACT</a>
-              <a href="./login.html">LOGIN <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i></a>
-            </div>
-            <a href="javascript:void(0);" class="nav-icon">
-              <i id="mobile-menu" class="fa-solid fa-bars" style="color: #ffffff;"></i>
-            </a>
-        </nav>
+
+        @include('components.nav')
+
       </div>
-    
+
       <div id="nav-modal" class="nav-modal">
         <div class="nav-modal-content">
           <div class="nav-modal-close"><span class="nav-close">&times;</span></div>
           <div class="nav-modal-links">
-            <a href="./index.html">HOME</a>
-            <a href="./store.html">STORE</a>
-            <a href="./about.html">ABOUT</a>
-            <a href="./contact.html">CONTACT</a>
-            <a href="./login.html">LOGIN <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i></a>
+            <a href="/">HOME</a>
+            <a href="/store">STORE</a>
+            <a href="/about">ABOUT</a>
+            <a href="/contact">CONTACT</a>
+            <a href="/login">LOGIN <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i></a>
           </div>
         </div>
       </div>
-    
+
       <div id="contact">
         <div class="big-card">
           <div class="big-card-title">
             <h1>CONTACT</h1>
-            <img src="./images/contact.png">
+            <img src="{{ url('images/contact.png') }}">
           </div>
             <div id="content">
                 <form>
@@ -97,17 +83,8 @@
             </div>
         </div>
       </div>
-    
-      <footer>
-        <h2>EXPLORE</h2>
-        <ul>
-          <li><a href="./index.html">HOME</a></li>
-          <li><a href="./store.html">STORE</a></li>
-          <li><a href="./about.html">ABOUT</a></li>
-          <li><a href="./contact.html">CONTACT</a></li>
-        </ul>
-      </footer>
-    
-      <script src="./main.js"></script>
+
+    @include('components.footer')
+
 </body>
 </html>

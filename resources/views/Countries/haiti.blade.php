@@ -20,25 +20,11 @@
         <video autoplay playsinline muted loop class="bg-vid-sm">
           <source src="../images/bg.mp4" type="video/mp4">
         </video>
-    
-        <nav>
-          <div class="nav-logo">
-            <a href="../index.html">
-              <img src="../images/5.png"> AQUALITY
-            </a>
-          </div>
-            <div class="right">
-              <a href="../store.html">STORE</a>
-              <a href="../about.html">ABOUT</a>
-              <a href="../contact.html">CONTACT</a>
-              <a href="../login.html">LOGIN <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i></a>
-            </div>
-            <a href="javascript:void(0);" class="nav-icon">
-              <i id="mobile-menu" class="fa-solid fa-bars" style="color: #ffffff;"></i>
-            </a>
-        </nav>
+
+        @include('components.nav')
+
       </div>
-    
+
       <div id="nav-modal" class="nav-modal">
         <div class="nav-modal-content">
           <div class="nav-modal-close"><span class="nav-close">&times;</span></div>
@@ -51,7 +37,7 @@
           </div>
         </div>
       </div>
-    
+
       <div id="country" class="haiti">
         <div class="country-card">
           <div class="country-card-title">
@@ -66,18 +52,18 @@
                   </div>
                     <div class="text">
                         <p>
-                          Haïti is een land met uitdagende wateromstandigheden, 
-                          AQUALITY spant zich in voor waterkwaliteitsmetingen 
-                          en verbeteringen voor de verschillende waterbronnen. 
-                          Van stedelijke gebieden tot afgelegen gemeenschappen, 
-                          maken onze meetapparatuur een gedetailleerde analyse van de 
-                          waterkwaliteit, rekening houdend met lokale factoren zoals 
-                          menselijke activiteiten en geografie. Onze nauwe samenwerking 
-                          met lokale leiders en overheidsinstanties is cruciaal voor 
-                          het aanpakken van de specifieke uitdagingen in elke regio. 
-                          Met de focus op bewustmaking streven we niet alleen naar schone 
-                          waterbronnen, maar ook naar veerkrachtige gemeenschappen die 
-                          zelf een rol spelen in duurzaam waterbeheer. Ontdek de metingen 
+                          Haïti is een land met uitdagende wateromstandigheden,
+                          AQUALITY spant zich in voor waterkwaliteitsmetingen
+                          en verbeteringen voor de verschillende waterbronnen.
+                          Van stedelijke gebieden tot afgelegen gemeenschappen,
+                          maken onze meetapparatuur een gedetailleerde analyse van de
+                          waterkwaliteit, rekening houdend met lokale factoren zoals
+                          menselijke activiteiten en geografie. Onze nauwe samenwerking
+                          met lokale leiders en overheidsinstanties is cruciaal voor
+                          het aanpakken van de specifieke uitdagingen in elke regio.
+                          Met de focus op bewustmaking streven we niet alleen naar schone
+                          waterbronnen, maar ook naar veerkrachtige gemeenschappen die
+                          zelf een rol spelen in duurzaam waterbeheer. Ontdek de metingen
                           die zijn gedaan in Haïti hieronder.
                         </p>
                     </div>
@@ -156,17 +142,9 @@
             </div>
         </div>
       </div>
-    
-      <footer>
-        <h2>EXPLORE</h2>
-        <ul>
-          <li><a href="../index.html">HOME</a></li>
-          <li><a href="../store.html">STORE</a></li>
-          <li><a href="../about.html">ABOUT</a></li>
-          <li><a href="../contact.html">CONTACT</a></li>
-        </ul>
-      </footer>
-    
-      <script src="../main.js"></script>
+
+      @include('components.footer')
+
+      <script src="{{ url('js/main.js') }}"></script>
 </body>
 </html>

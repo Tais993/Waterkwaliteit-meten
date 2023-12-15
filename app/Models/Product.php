@@ -16,6 +16,6 @@ class Product extends Model
     ];
     public function Parameter(): belongsToMany
     {
-        return $this->belongsToMany(Parameter::class, 'product_parameters', 'product_id', 'parameter_id');
+        return $this->belongsToMany(Parameter::class);
     }
 }
