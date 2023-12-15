@@ -44,30 +44,48 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    protected function validator(array $data): \Illuminate\Contracts\Validation\Validator
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'phone_number' => ['required', 'string', 'max:20'], // Update max length as needed
+            'street' => ['required', 'string', 'max:255'],
+            'house_number' => ['required', 'string', 'max:50'], // Update max length as needed
+            'zipcode' => ['required', 'string', 'max:20'],
+            'city' => ['required', 'string', 'max:255'],
+            'country' => ['required', 'string', 'max:255'],
+
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 
+
     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\Models\User
+     * @return User
      */
-    protected function create(array $data)
+    protected function create(array $data): User
     {
         return User::create([
-            'name' => $data['name'],
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'phone_number' => $data['phone_number'],
+            'street' => $data['street'],
+            'house_number' => $data['house_number'],
+            'zipcode' => $data['zipcode'],
+            'city' => $data['city'],
+            'country' => $data['country'],
+
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role_id' => 2
         ]);
     }
 }

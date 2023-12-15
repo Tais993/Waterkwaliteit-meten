@@ -20,25 +20,11 @@
         <video autoplay playsinline muted loop class="bg-vid-sm">
           <source src="../images/bg.mp4" type="video/mp4">
         </video>
-    
-        <nav>
-          <div class="nav-logo">
-            <a href="../index.html">
-              <img src="../images/5.png"> AQUALITY
-            </a>
-          </div>
-            <div class="right">
-              <a href="../store.html">STORE</a>
-              <a href="../about.html">ABOUT</a>
-              <a href="../contact.html">CONTACT</a>
-              <a href="../login.html">LOGIN <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i></a>
-            </div>
-            <a href="javascript:void(0);" class="nav-icon">
-              <i id="mobile-menu" class="fa-solid fa-bars" style="color: #ffffff;"></i>
-            </a>
-        </nav>
+
+        @include('components.nav')
+
       </div>
-    
+
       <div id="nav-modal" class="nav-modal">
         <div class="nav-modal-content">
           <div class="nav-modal-close"><span class="nav-close">&times;</span></div>
@@ -51,7 +37,7 @@
           </div>
         </div>
       </div>
-    
+
     <div id="country" class="senegal">
       <div class="country-card">
         <div class="country-card-title">
@@ -66,16 +52,16 @@
             </div>
             <div class="text">
               <p>
-                In Senegal, een land van diverse landschappen, zetten 
-                we ons bij AQUALITY in voor het meten en verbeteren 
-                van de waterkwaliteit. Van stedelijke gebieden tot afgelegen 
-                dorpen, onze meetapparatuur verzamelen cruciale gegevens 
-                over waterkwaliteit en factoren als menselijke activiteiten 
-                en klimaatomstandigheden. Onze samenwerking met lokale gemeenschappen 
-                en overheidspartners is essentieel, en we streven naar duurzame 
-                oplossingen die de unieke behoeften van elke regio aanpakken. Door 
-                bewustmaking vergroten we niet alleen de lokale betrokkenheid, 
-                maar bevorderen we ook de veerkracht van Senegal op het gebied van 
+                In Senegal, een land van diverse landschappen, zetten
+                we ons bij AQUALITY in voor het meten en verbeteren
+                van de waterkwaliteit. Van stedelijke gebieden tot afgelegen
+                dorpen, onze meetapparatuur verzamelen cruciale gegevens
+                over waterkwaliteit en factoren als menselijke activiteiten
+                en klimaatomstandigheden. Onze samenwerking met lokale gemeenschappen
+                en overheidspartners is essentieel, en we streven naar duurzame
+                oplossingen die de unieke behoeften van elke regio aanpakken. Door
+                bewustmaking vergroten we niet alleen de lokale betrokkenheid,
+                maar bevorderen we ook de veerkracht van Senegal op het gebied van
                 waterbeheer. Ontdek de metingen die zijn gedaan in Senegal hieronder.
               </p>
             </div>
@@ -154,10 +140,10 @@
           </div>
         </div>
       </div>
-    
+
       <!-- The Modal -->
       <div id="sen-161123-modal" class="modal">
-    
+
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
@@ -199,17 +185,8 @@
               </div>
         </div>
       </div>
-    
-      <footer>
-        <h2>EXPLORE</h2>
-        <ul>
-          <li><a href="../index.html">HOME</a></li>
-          <li><a href="../store.html">STORE</a></li>
-          <li><a href="../about.html">ABOUT</a></li>
-          <li><a href="../contact.html">CONTACT</a></li>
-        </ul>
-      </footer>
-    
-      <script src="../main.js"></script>
+
+      @include('components.footer')
+
 </body>
 </html>

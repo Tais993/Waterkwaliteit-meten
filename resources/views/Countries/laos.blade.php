@@ -20,7 +20,7 @@
         <video autoplay playsinline muted loop class="bg-vid-sm">
           <source src="../images/bg.mp4" type="video/mp4">
         </video>
-    
+
         <nav>
           <div class="nav-logo">
             <a href="../index.html">
@@ -38,7 +38,7 @@
             </a>
         </nav>
       </div>
-    
+
       <div id="nav-modal" class="nav-modal">
         <div class="nav-modal-content">
           <div class="nav-modal-close"><span class="nav-close">&times;</span></div>
@@ -51,7 +51,7 @@
           </div>
         </div>
       </div>
-    
+
       <div id="country" class="laos">
         <div class="country-card">
           <div class="country-card-title">
@@ -66,18 +66,18 @@
                   </div>
                     <div class="text">
                         <p>
-                          In Laos, te midden van betoverende landschappen, 
-                          zet AQUALITY zich in voor het meten en 
-                          verbeteren van de waterkwaliteit. Of het nu 
-                          stedelijke centra betreft of afgelegen gebieden, 
-                          onze meetappratuur analyseren nauwkeurig de waterkwaliteit, 
-                          rekening houdend met lokale variabelen zoals menselijke 
-                          activiteiten en geografische kenmerken. Onze nauwe samenwerking 
-                          met lokale gemeenschappen en overheidspartners is van vitaal 
-                          belang om de specifieke uitdagingen van elke regio aan te pakken. 
-                          Door bewustmaking streven we naar niet alleen schone waterbronnen, 
-                          maar ook naar veerkrachtige gemeenschappen die actief bijdragen 
-                          aan duurzaam waterbeheer. Ontdek de metingen die zijn gedaan in 
+                          In Laos, te midden van betoverende landschappen,
+                          zet AQUALITY zich in voor het meten en
+                          verbeteren van de waterkwaliteit. Of het nu
+                          stedelijke centra betreft of afgelegen gebieden,
+                          onze meetappratuur analyseren nauwkeurig de waterkwaliteit,
+                          rekening houdend met lokale variabelen zoals menselijke
+                          activiteiten en geografische kenmerken. Onze nauwe samenwerking
+                          met lokale gemeenschappen en overheidspartners is van vitaal
+                          belang om de specifieke uitdagingen van elke regio aan te pakken.
+                          Door bewustmaking streven we naar niet alleen schone waterbronnen,
+                          maar ook naar veerkrachtige gemeenschappen die actief bijdragen
+                          aan duurzaam waterbeheer. Ontdek de metingen die zijn gedaan in
                           Laos hieronder.
                         </p>
                     </div>
@@ -156,17 +156,8 @@
             </div>
         </div>
       </div>
-    
-      <footer>
-        <h2>EXPLORE</h2>
-        <ul>
-          <li><a href="../index.html">HOME</a></li>
-          <li><a href="../store.html">STORE</a></li>
-          <li><a href="../about.html">ABOUT</a></li>
-          <li><a href="../contact.html">CONTACT</a></li>
-        </ul>
-      </footer>
-    
-      <script src="../main.js"></script>
+
+      @include('components.footer')
+
 </body>
 </html>

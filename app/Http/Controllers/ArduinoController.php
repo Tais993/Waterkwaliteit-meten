@@ -35,7 +35,12 @@ class ArduinoController extends Controller
             ->orderBy('created_at', 'desc')
             ->first('waarde');
 
+        if($latestMeasurement == null) {
+            return view('countries/senegal');
+        }
+
         $pHValue = $latestMeasurement->waarde;
+
         return view('countries/senegal', ['pHValue' => $pHValue]);
     }
 }
