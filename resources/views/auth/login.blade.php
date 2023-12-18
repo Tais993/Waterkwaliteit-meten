@@ -32,14 +32,14 @@
                 <form>
                     <div class="col-md">
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="John">
-                            <label for="floatingInput">EMAIL</label>
+                            <input type="email" class="form-control" id="email">
+                            <label for="email">EMAIL</label>
                         </div>
                     </div>
                     <div class="col-md">
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="floatingInput" placeholder="Doe">
-                            <label for="floatingInput">PASSWORD</label>
+                            <input type="password" class="form-control" id="password">
+                            <label for="password">PASSWORD</label>
                         </div>
                     </div>
                     <div id="remember-forgot">

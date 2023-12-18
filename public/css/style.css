@@ -564,7 +564,7 @@
     }
   }
   
-  #about, #contact, #login {
+  #about, #contact, #login, #register {
     
     margin: 5rem auto;
     display: flex;
@@ -680,7 +680,7 @@
     color: #fff;
   }
   
-  #contact button, #login button {
+  #contact button, #login button, #register button {
     display: block;
     border: none;
     border-radius: 0.625rem;
@@ -692,7 +692,7 @@
     text-align: center;
   }
   
-  #contact button a span, #login button a span {
+  #contact button a span, #login button a span, #register button a span {
     color: #fff;
     cursor: pointer;
     display: inline-block;
@@ -700,7 +700,7 @@
     transition: 0.5s;
   }
   
-  #contact button a span:after, #login button a span:after {
+  #contact button a span:after, #login button a span:after, #register button a span:after {
     content: ' >';
     position: absolute;
     opacity: 0;
@@ -709,16 +709,16 @@
     transition: 0.5s;
   }
   
-  #contact button:hover a span, #login button:hover a span {
+  #contact button:hover a span, #login button:hover a span, #register button:hover a span {
     padding-right: 25px;
   }
   
-  #contact button:hover a span:after, #login button:hover a span:after {
+  #contact button:hover a span:after, #login button:hover a span:after, #register button:hover a span:after {
     opacity: 1;
     right: 0;
   }
   
-  #country {
+  #countries {
     margin: 5rem auto;
     display: flex;
     justify-content: center;
@@ -1067,6 +1067,15 @@
   .register-here {
     margin: 0 auto;
     text-align: center;
+  }
+
+  #login form button {
+    margin: 3rem auto 1rem auto ;
+  }
+
+  #register form {
+    max-width: 80%;
+    margin: 0 auto;
   }
 
   #login form button {
