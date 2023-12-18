@@ -18,9 +18,11 @@
 <body>
     <div id="hero">
         <video autoplay playsinline muted loop class="bg-vid-sm">
-            <source src="./images/bg.mp4" type="video/mp4">
+            <source src="{{ url('images/bg.mp4') }}" type="video/mp4">
         </video>
+
         @include('components.nav')
+
     </div>
     <div id="login">
         <div class="big-card">
@@ -29,30 +31,41 @@
                 <img src="{{ url('images/login.png') }}">
             </div>
             <div id="content">
-                <form>
+                @error('email')
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>{{ __($message) }}</strong>
+                </div>
+                @enderror
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
                     <div class="col-md">
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="John">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="John">
                             <label for="floatingInput">EMAIL</label>
                         </div>
                     </div>
+
                     <div class="col-md">
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="floatingInput" placeholder="Doe">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Doe">
                             <label for="floatingInput">PASSWORD</label>
                         </div>
                     </div>
+
                     <div id="remember-forgot">
                         <div id="remember-forgot">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" {{ old('remember') ? 'checked' : '' }}>
                             <label class="form-check-label" for="flexCheckDefault">Remember me</label>
-                            <a href="#">Forgot your password?</a>
+                            <a href="{{ route('password.request') }}">Forgot your password?</a>
                         </div>
                     </div>
+
                     <button type="submit"><a><span>LOG IN</span></a></button>
+
                     <div class="register-here">
-                        <a href="/register">Don't have an account yet? Create one here!</a>
+                        <a href="{{ route('register') }}">Don't have an account yet? Create one here!</a>
                     </div>
+
                 </form>
             </div>
         </div>

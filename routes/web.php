@@ -45,4 +45,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/landen/senegal', [ArduinoController::class, 'getMeasuredData']);
 
-Route::get('/product-aanmaken', [App\Http\Controllers\ProductController::class, 'create']);
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
+Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+Route::post('/products/create', [ProductController::class, 'create']);
+
