@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArduinoController;
@@ -22,3 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(ArduinoController::class)->group(function () {
     Route::post('/waterkwaliteit', 'store');
 });
+
+Route::post('/products/create', [ProductController::class, 'create']);
+Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');

@@ -21,7 +21,8 @@
           <source src="../images/bg.mp4" type="video/mp4">
         </video>
 
-        @include('components.nav')  
+        @include('components.nav')
+
       </div>
 
       <div id="nav-modal" class="nav-modal">

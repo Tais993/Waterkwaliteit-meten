@@ -4,34 +4,104 @@ namespace App\Http\Controllers;
 
 use App\Models\Parameter;
 use App\Models\Product;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function Create()
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function create(Request $request): mixed
     {
-        $product = Product::create([
-            'naam' => 'Arduino',
-            'type' => 'Mega',
-            'voorraad' => 10
-        ]);
-        
-        $product->Parameter()->attach([1, 2]);
+        if ($request->isMethod('GET')) {
+            // Fetch parameters and pass them to the view
+            $parameters = Parameter::all(); // Fetch parameters from your database
+            return view('products.create', compact('parameters'));
+
+        }
+
+        if ($request->isMethod('POST')) {
+            // Validation and product creation logic here...
+            // Assuming parameters are submitted as an array of IDs
+            $validatedData = $request->validate([
+                'naam' => 'required|string',
+                'type' => 'required|string',
+                'voorraad' => 'required|integer',
+                'parameters' => 'required|array'
+            ]);
+
+            $product = Product::create([
+                'naam' => $validatedData['naam'],
+                'type' => $validatedData['type'],
+                'voorraad' => $validatedData['voorraad']
+            ]);
+
+            $product->parameter()->attach($validatedData['parameters']);
+
+            return redirect()->route('products.index')->with('success', 'Product created successfully!');
+        }
+
+        return null;
+    }
+
+    /**
+     * @param $id
+     * @return JsonResponse
+     */
+    public function read($id): JsonResponse
+    {
+        $product = Product::find($id);
+
+        if (!$product) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
 
         return $product;
     }
 
-    public function Read()
+    /**
+     * @param Request $request
+     * @param $id
+     * @return JsonResponse
+     */
+    public function update(Request $request, $id): JsonResponse
     {
+        $product = Product::find($id);
 
+        if (!$product) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+
+        $product->update($request->all());
+
+        return $product;
     }
 
-    public function Update()
+    public function delete($id): JsonResponse
     {
+        $product = Product::find($id);
 
+        if (!$product) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+
+        $product->parameters()->detach(); // Assuming you want to detach parameters related to this product first
+        $product->delete();
+
+        return response()->json(['message' => 'Product deleted successfully']);
     }
 
-    public function Delete()
+    /**
+     * @return View
+     */
+    public function index(): View
     {
+        $products = Product::all();
+        $parameters = Parameter::all();
 
+        return view('products.index', compact('products', 'parameters'));
     }
 }

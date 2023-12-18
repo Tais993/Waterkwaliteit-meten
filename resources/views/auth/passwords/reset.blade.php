@@ -1,65 +1,80 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQUALITY | RESET WACHTWOORD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Mako&display=swap" rel="stylesheet">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+    <link href="{{ url("/css/style.css") }}" rel="stylesheet">
+    <link href="{{ url("/css/bootstrap.css") }}" rel="stylesheet">
+    <script src="{{ url("/js/bootstrap.js") }}"></script>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('password.update') }}">
-                        @csrf
+    <script src="https://kit.fontawesome.com/29e1c6ffb2.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="{{ url('images/5.png') }}">
+</head>
+<body>
+<div id="hero">
+    <video autoplay playsinline muted loop class="bg-vid-sm">
+        <source src="{{ url('images/bg.mp4') }}" type="video/mp4">
+    </video>
 
-                        <input type="hidden" name="token" value="{{ $token }}">
+    @include('components.nav')
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+</div>
+<div id="login">
+    <div class="big-card">
+        <div class="big-card-title">
+            <h1>RESET WACHTWOORD</h1>
+            <img src="{{ url('images/login.png') }}">
+        </div>
+        <div id="content">
+            @error('email')
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>{{ $message }}</strong>
                 </div>
-            </div>
+            @enderror
+            @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+            <form method="POST" action="{{ route('password.update') }}">
+                @csrf
+                <input type="hidden" name="token" value="{{ $token }}">
+
+                <div class="col-md">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" name="email" id="email" value="{{ $email ?? old('email') }}" placeholder="je naam...">
+                        <label for="email">EMAIL</label>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" value="" name="password" id="password" placeholder="wachtwoord...">
+                        <label for="password">WACHTWOORD</label>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="herhaal wachtwoord...">
+                        <label for="password_confirmation">WACHTWOORD HERHALEN</label>
+                    </div>
+                </div>
+
+                <button type="submit"><a><span>RESET WACHTWOORD</span></a></button>
+            </form>
         </div>
     </div>
 </div>
-@endsection
+
+
+@include('components.footer')
+
+</body>
+</html>
+
