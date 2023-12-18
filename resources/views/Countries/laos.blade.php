@@ -21,22 +21,7 @@
           <source src="../images/bg.mp4" type="video/mp4">
         </video>
 
-        <nav>
-          <div class="nav-logo">
-            <a href="../index.html">
-              <img src="../images/5.png"> AQUALITY
-            </a>
-          </div>
-            <div class="right">
-              <a href="../store.html">STORE</a>
-              <a href="../about.html">ABOUT</a>
-              <a href="../contact.html">CONTACT</a>
-              <a href="../login.html">LOGIN <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i></a>
-            </div>
-            <a href="javascript:void(0);" class="nav-icon">
-              <i id="mobile-menu" class="fa-solid fa-bars" style="color: #ffffff;"></i>
-            </a>
-        </nav>
+        @include('components.nav')  
       </div>
 
       <div id="nav-modal" class="nav-modal">

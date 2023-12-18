@@ -22,7 +22,6 @@
         </video>
 
         @include('components.nav')
-
       </div>
 
       <div id="nav-modal" class="nav-modal">
@@ -145,6 +144,5 @@
 
       @include('components.footer')
 
-      <script src="{{ url('js/main.js') }}"></script>
 </body>
 </html>

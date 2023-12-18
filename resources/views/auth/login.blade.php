@@ -1,73 +1,66 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQUALITY | LOGIN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Mako&display=swap" rel="stylesheet">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+    <link href="{{ url("/css/style.css") }}" rel="stylesheet">
+    <link href="{{ url("/css/bootstrap.css") }}" rel="stylesheet">
+    <script src="{{ url("/js/bootstrap.js") }}"></script>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+    <script src="https://kit.fontawesome.com/29e1c6ffb2.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="{{ url('images/5.png') }}">
+</head>
+<body>
+    <div id="hero">
+        <video autoplay playsinline muted loop class="bg-vid-sm">
+            <source src="./images/bg.mp4" type="video/mp4">
+        </video>
+        @include('components.nav')
+    </div>
+    <div id="login">
+        <div class="big-card">
+            <div class="big-card-title">
+                <h1>LOGIN</h1>
+                <img src="{{ url('images/login.png') }}">
+            </div>
+            <div id="content">
+                <form>
+                    <div class="col-md">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="John">
+                            <label for="floatingInput">EMAIL</label>
                         </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingInput" placeholder="Doe">
+                            <label for="floatingInput">PASSWORD</label>
                         </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
+                    </div>
+                    <div id="remember-forgot">
+                        <div id="remember-forgot">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">Remember me</label>
+                            <a href="#">Forgot your password?</a>
                         </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <button type="submit"><a><span>LOG IN</span></a></button>
+                    <div class="register-here">
+                        <a href="/register">Don't have an account yet? Create one here!</a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
-@endsection
+
+
+@include('components.footer')
+
+</body>
+</html>
+

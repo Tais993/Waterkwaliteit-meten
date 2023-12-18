@@ -22,7 +22,6 @@
         </video>
 
         @include('components.nav')
-
       </div>
 
       <div id="nav-modal" class="nav-modal">
