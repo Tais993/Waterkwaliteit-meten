@@ -26,3 +26,4 @@ Route::controller(ArduinoController::class)->group(function () {
 
 Route::post('/products/create', [ProductController::class, 'create']);
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+Route::get('/products', [ProductController::class, 'apiIndex'])->name('products.index');
