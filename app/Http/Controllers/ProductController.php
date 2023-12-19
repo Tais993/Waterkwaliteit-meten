@@ -40,9 +40,11 @@ class ProductController extends Controller
                 'voorraad' => $validatedData['voorraad']
             ]);
 
-            $product->parameter()->attach($validatedData['parameters']);
+            $product->parameters()->attach($validatedData['parameters']);
 
             return redirect()->route('products.index')->with('success', 'Product created successfully!');
+        } else {
+            return redirect()->route('products.index')->with('failure', 'Product not created try again!');
         }
 
         return null;
@@ -100,10 +102,10 @@ class ProductController extends Controller
      */
     public function index(): View
     {
-        $products = Product::all();
-        $parameters = Parameter::all();
+        // Load products with their associated parameters
+        $products = Product::with('parameters')->get();
 
-        return view('products.index', compact('products', 'parameters'));
+        return view('products.index', compact('products'));
     }
 
     public function apiIndex(): Collection|array

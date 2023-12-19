@@ -8,9 +8,14 @@
                     <div class="card-header">{{ __('Products') }}</div>
 
                     <div class="card-body">
-                        @if (session('status'))
+                        @if (session('success'))
                             <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
+                                {{ session('success') }}
+                            </div>
+                        @endif
+                        @if (session('failure'))
+                            <div class="alert alert-danger" role="alert">
+                                {{ session('failure') }}
                             </div>
                         @endif
 
@@ -34,7 +39,7 @@
                                     <td>{{ $product->naam }}</td>
                                     <td>{{ $product->type }}</td>
                                     <td>{{ $product->voorraad }}</td>
-                                    <td>@foreach($parameters as $parameter) {{ $parameter->naam }}@endforeach</td>
+                                    <td>@foreach($product->parameters as $parameter) {{ $parameter->naam }}@endforeach</td>
                                     <!-- Add other columns' data as needed -->
                                 </tr>
                             @endforeach
