@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Parameter;
 use App\Models\Product;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -103,5 +104,12 @@ class ProductController extends Controller
         $parameters = Parameter::all();
 
         return view('products.index', compact('products', 'parameters'));
+    }
+
+    public function apiIndex(): Collection|array
+    {
+        $products = Product::with('parameters')->get();
+
+        return $products;
     }
 }
