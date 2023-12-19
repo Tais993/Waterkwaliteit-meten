@@ -44,7 +44,7 @@ class ProductController extends Controller
 
             return redirect()->route('products.index')->with('success', 'Product created successfully!');
         } else {
-            return redirect()->route('products.index')->with('failure', 'Product not created try again!');
+            return redirect()->route('products.create')->with('failure', 'Product not created try again!');
         }
 
         return null;

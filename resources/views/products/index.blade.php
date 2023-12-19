@@ -19,10 +19,12 @@
                             </div>
                         @endif
 
-                        <a href="{{ route('products.create') }}" class="btn btn-primary">ADD</a>
+                            <div class="d-flex justify-content-between">
+                                <h2>All Products</h2>
+                                <a href="{{ route('products.create') }}" class="btn btn-primary">ADD</a>
+                            </div>
 
-                        <h2>All Products</h2>
-                        <table class="table">
+                            <table class="table">
                             <thead>
                             <tr>
                                 <th>ID</th>

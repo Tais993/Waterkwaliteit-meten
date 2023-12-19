@@ -26,22 +26,33 @@
         <div class="big-card">
             <div class="big-card-title">
                 <h1>REGISTER</h1>
-                <img src="{{ url('images/login.png') }}">
+                <img src="{{ url('images/login.png') }}" alt="login image">
             </div>
             <div id="content">
-                <form>
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
                     <div class="row g-2">
                         <div class="col-md">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="firstName" placeholder="John">
-                                <label for="firstName">FIRST NAME</label>
+                                <input type="text" class="form-control" id="firstName" name="first_name" placeholder="John">
+                                <label for="firstName" @error('first_name') is-invalid @enderror>FIRST NAME</label>
+                                @error('first_name')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-md">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="lastName" placeholder="Doe">
-                                <label for="lastName">LAST NAME</label>
+                                <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Doe">
+                                <label for="lastName" @error('last_name') is-invalid @enderror>LAST NAME</label>
+                                @error('last_name')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -49,15 +60,25 @@
                     <div class="row g-2">
                         <div class="col-md">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="email" placeholder="example@example.com">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="example@example.com">
                                 <label for="email">EMAIL</label>
+                                @error('email')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-md">
                             <div class="form-floating mb-3">
-                                <input type="tel" class="form-control" id="phone" placeholder="0612345678">
+                                <input type="tel" class="form-control" id="phone" name="phone_number" placeholder="0612345678">
                                 <label for="phone">PHONE</label>
+                                @error('phone_number')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -65,15 +86,25 @@
                     <div class="row g-2">
                         <div class="col-md">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="street" placeholder="Rachelsmolen">
+                                <input type="text" class="form-control" id="street" name="street" placeholder="Rachelsmolen">
                                 <label for="street">STREET</label>
+                                @error('street')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-md">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="houseNumber" placeholder="1">
-                                <label for="house_number">HOUSE NUMBER</label>
+                                <input type="text" class="form-control" id="houseNumber" name="house_number" placeholder="1">
+                                <label for="houseNumber">HOUSE NUMBER</label>
+                                @error('house_number')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -81,55 +112,65 @@
                     <div class="row g-2">
                         <div class="col-md">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="zipCode" placeholder="5612 MA">
-                                <label for="email">ZIP CODE</label>
+                                <input type="text" class="form-control" id="zipCode" name="zipcode" placeholder="5612 MA">
+                                <label for="zipCode">ZIP CODE</label>
+                                @error('zipcode')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-md">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="city" placeholder="Eindhoven">
+                                <input type="text" class="form-control" id="city" name="city" placeholder="Eindhoven">
                                 <label for="city">CITY</label>
+                                @error('city')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md regform">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="country" placeholder="5612 MA">
+                            <input type="text" class="form-control" id="country" name="country" placeholder="5612 MA">
                             <label for="country">COUNTRY</label>
+                            @error('country')
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="row g-2">
                         <div class="col-md">
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="password" placeholder="5612 MA">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="5612 MA">
                                 <label for="password">PASSWORD</label>
+                                @error('password')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-md">
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="confirmPassword" placeholder="Eindhoven">
+                                <input type="password" class="form-control" id="confirmPassword" name="password_confirmation" placeholder="Eindhoven">
                                 <label for="confirmPassword">CONFIRM PASSWORD</label>
                             </div>
                         </div>
                     </div>
 
-
-
-
-                    {{-- <div id="remember-forgot">
-                        <div id="remember-forgot">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">Remember me</label>
-                            <a href="#">Forgot your password?</a>
-                        </div>
-                    </div> --}}
-                    <button type="submit"><a><span>REGISTER</span></a></button>
+                    <button type="submit">Register</button>
                     <div class="register-here">
-                        <a href="/login">Already have an account? Log in here!</a>
+                        <a href="{{ route('login') }}">Already have an account? Log in here!</a>
                     </div>
                 </form>
             </div>

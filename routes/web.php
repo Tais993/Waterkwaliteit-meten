@@ -41,7 +41,15 @@ Route::get('/landen/laos', function () {
     return view('countries/laos');
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', function () {
+    // Check if the user is authenticated and has an admin role
+    if (auth()->check() && auth()->user()->role_id === 1) {
+        return view('home');
+    }
+
+    // Redirect or return a response indicating unauthorized access
+    return redirect('/')->with('error', 'Unauthorized access');
+})->name('dashboard')->middleware('auth');
 
 Route::get('/landen/senegal', [ArduinoController::class, 'getMeasuredData']);
 

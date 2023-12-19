@@ -9,7 +9,7 @@
         <a href="/about">ABOUT</a>
         <a href="/contact">CONTACT</a>
         @if(auth()->user() && auth()->user()->isAdmin())
-            <a href="/login">ADMIN DASHBOARD <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i></a>
+            <a href="{{ route('dashboard') }}">ADMIN DASHBOARD <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i></a>
         @elseif(!auth()->user())
             <a href="/login">LOG IN <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i></a>
             @else

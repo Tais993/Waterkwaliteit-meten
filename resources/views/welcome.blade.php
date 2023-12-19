@@ -22,7 +22,12 @@
         </video>
 
         @include('components.nav')
-
+        @if(session('error'))
+            <div class="alert top-0 left-0 z-2 w-100 position-fixed alert-danger alert-dismissible fade show" role="alert">
+                <strong>{{ session('error') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         <h1>EEN GOEDE WATERKWALITEIT VOOR IEDEREEN</h1>
         <p>
           Welkom bij AQUALITY, waar we ons  inzetten om de waterkwaliteit in Afrika,
@@ -105,7 +110,7 @@
         </div>
       </div>
     </div>
-  
+
     @include('components.footer')
 
 </body>
