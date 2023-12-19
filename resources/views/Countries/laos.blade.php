@@ -38,7 +38,7 @@
         </div>
       </div>
 
-      <div id="country" class="laos">
+      <div id="countries" class="laos">
         <div class="country-card">
           <div class="country-card-title">
             <h1>LAOS</h1>

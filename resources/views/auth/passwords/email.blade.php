@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AQUALITY | RESET WACHTWOORD</title>
+    <title>AQUALITY | RESET PASSWORD</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Mako&display=swap" rel="stylesheet">
@@ -24,10 +24,10 @@
     @include('components.nav')
 
 </div>
-<div id="login">
+<div id="reset">
     <div class="big-card">
         <div class="big-card-title">
-            <h1>RESET WACHTWOORD</h1>
+            <h1>RESET PASSWORD</h1>
             <img src="{{ url('images/login.png') }}">
         </div>
         <div id="content">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
 
-                <button type="submit"><a><span>RESET WACHTWOORD</span></a></button>
+                <button type="submit"><a><span>SEND EMAIL</span></a></button>
             </form>
         </div>
     </div>

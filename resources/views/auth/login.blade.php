@@ -41,14 +41,14 @@
                     <div class="col-md">
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" name="email" id="email" placeholder="John">
-                            <label for="floatingInput">EMAIL</label>
+                            <label for="email">EMAIL</label>
                         </div>
                     </div>
 
                     <div class="col-md">
                         <div class="form-floating mb-3">
                             <input type="password" class="form-control" name="password" id="password" placeholder="Doe">
-                            <label for="floatingInput">PASSWORD</label>
+                            <label for="password">PASSWORD</label>
                         </div>
                     </div>
 
