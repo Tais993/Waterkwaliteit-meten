@@ -21,7 +21,6 @@ class ProductController extends Controller
             // Fetch parameters and pass them to the view
             $parameters = Parameter::all(); // Fetch parameters from your database
             return view('products.create', compact('parameters'));
-
         }
 
         if ($request->isMethod('POST')) {
@@ -46,8 +45,6 @@ class ProductController extends Controller
         } else {
             return redirect()->route('products.create')->with('failure', 'Product not created try again!');
         }
-
-        return null;
     }
 
     /**
@@ -110,8 +107,6 @@ class ProductController extends Controller
 
     public function apiIndex(): Collection|array
     {
-        $products = Product::with('parameters')->get();
-
-        return $products;
+        return Product::with('parameters')->get();
     }
 }

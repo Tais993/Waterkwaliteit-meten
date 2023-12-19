@@ -6,6 +6,7 @@
 
 @section('content')
     <div class="container">
+
         @foreach($fields as $field)
             @error($field)
             <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
@@ -14,6 +15,7 @@
             </div>
             @enderror
         @endforeach
+
         <h2 class="w-50 m-auto">Create New Product</h2>
 
         <form action="{{ route('products.create') }}" method="POST" class="mt-4 w-50 m-auto">
@@ -43,8 +45,6 @@
                     @endforeach
                 </div>
             </div>
-
-            <!-- Add other fields as needed -->
 
             <button type="submit" class="btn btn-primary">Create Product</button>
         </form>

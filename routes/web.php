@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ArduinoController;
+use App\Http\Controllers\ParameterController;
 use App\Http\Controllers\ProductController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -30,7 +32,10 @@ Route::get('/about', function () {
 });
 
 Route::get('/store', function () {
-    return view('store');
+
+    $products = Product::with('parameters')->get();
+
+    return view('store')->with('products', $products);
 });
 
 Route::get('/landen/senegal', function () {
@@ -61,4 +66,9 @@ Route::get('/products', [ProductController::class, 'index'])->name('products.ind
 
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
 Route::post('/products/create', [ProductController::class, 'create']);
+
+Route::get('/parameters', [ParameterController::class, 'index'])->name('parameters.index');
+
+Route::get('/parameters/create', [ParameterController::class, 'create'])->name('parameters.create');
+Route::post('/parameters/create', [ParameterController::class, 'create'])->name('parameters.create');
 

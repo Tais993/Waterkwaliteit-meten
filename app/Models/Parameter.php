@@ -8,8 +8,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Parameter extends Model
 {
-//    use HasFactory;
-
+    public $timestamps = false;
+    protected $fillable = [
+        'naam',
+        'meetEenheid'
+    ];
     public function Product(): BelongsToMany
     {
         return $this->belongsToMany(Product::class, 'product_parameters', 'parameter_id', 'product_id');

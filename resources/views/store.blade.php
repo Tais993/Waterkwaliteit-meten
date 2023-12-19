@@ -31,88 +31,46 @@
             <img src="./images/store.png">
           </div>
             <div class="product-list">
-                <div class="product">
-                    <div class="product-ls-img">
-                        <img src="./images/meter.png">
-                    </div>
-                    <div class="product-ls-desc">
-                        <h2>WATERMETER</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit, sed do eiusmod tempor 
-                            incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud 
-                            exercitation ullamco laboris nisi ut 
-                            aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                    <div class="product-ls-price">
-                        <h2>€59,99</h2>
-                        <div class="stock">
-                            <div class="stock-status-instock"></div>
-                            IN STOCK
+                @foreach($products as $product)
+                    <div class="product">
+                        <div class="product-ls-img">
+                            <img src="./images/meter.png">
                         </div>
-                        <button id="info-btn" type="button"><a href="#"><span>INFO</span></a></button>
-                        <button id="buy-btn" type="button"><a href="#"><span>BUY</span></a></button>
-                    </div>
-                </div>
-
-                <div class="product">
-                    <div class="product-ls-img">
-                        <img src="./images/meter.png">
-                    </div>
-                    <div class="product-ls-desc">
-                        <h2>WATERMETER</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit, sed do eiusmod tempor 
-                            incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud 
-                            exercitation ullamco laboris nisi ut 
-                            aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                    <div class="product-ls-price">
-                        <h2>€79,99</h2>
-                        <div class="stock">
-                            <div class="stock-status-soldout"></div>
-                            SOLD OUT
+                        <div class="product-ls-desc">
+                            <h2>{{ $product->naam . ' ' . $product->type }}</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut
+                                aliquip ex ea commodo consequat.
+                            </p>
                         </div>
-                        <button id="info-btn" type="button"><a href="#"><span>INFO</span></a></button>
-                        <button id="buy-btn" type="button"><a href="#"><span>BUY</span></a></button>
-                    </div>
-                </div>
-
-                <div class="product">
-                    <div class="product-ls-img">
-                        <img src="./images/meter.png">
-                    </div>
-                    <div class="product-ls-desc">
-                        <h2>WATERMETER</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit, sed do eiusmod tempor 
-                            incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud 
-                            exercitation ullamco laboris nisi ut 
-                            aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                    <div class="product-ls-price">
-                        <h2>€99,99</h2>
-                        <div class="stock">
-                            <div class="stock-status-almostsoldout"></div>
-                            IN STOCK
+                        <div class="product-ls-price">
+                            <h2>€59,99</h2>
+                            <div class="stock">
+                                @if($product->voorraad > 5)
+                                    <div class="stock-status-instock"></div>
+                                    IN STOCK
+                                @elseif($product->voorraad == 0)
+                                    <div class="stock-status-soldout"></div>
+                                    SOLD OUT
+                                @else
+                                    <div class="stock-status-almostsoldout"></div>
+                                    LAST ITEMS
+                                @endif
+                            </div>
+                            <button id="info-btn" type="button"><a href="#"><span>INFO</span></a></button>
+                            @if($product->voorraad > 0)
+                                <button id="buy-btn" type="button"><a href="#"><span>BUY</span></a></button>
+                            @endif
                         </div>
-                        <button id="info-btn" type="button"><a href="#"><span>INFO</span></a></button>
-                        <button id="buy-btn" type="button"><a href="#"><span>BUY</span></a></button>
                     </div>
-                </div>
+              @endforeach
             </div>
         </div>
       </div>
-
       @include('components.footer')
-
 </body>
 </html>
