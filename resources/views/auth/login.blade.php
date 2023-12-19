@@ -53,11 +53,11 @@
                     </div>
 
                     <div id="remember-forgot">
-                        <div id="remember-forgot">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" {{ old('remember') ? 'checked' : '' }}>
-                            <label class="form-check-label" for="flexCheckDefault">Remember me</label>
-                            <a href="{{ route('password.request') }}">Forgot your password?</a>
+                        <div>
+                            <input class="form-check-input" type="checkbox" value="" id="rememberMe" {{ old('remember') ? 'checked' : '' }}>
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
                         </div>
+                        <a href="{{ route('password.request') }}">Forgot your password?</a>
                     </div>
 
                     <button type="submit"><a><span>LOG IN</span></a></button>

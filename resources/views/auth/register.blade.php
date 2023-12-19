@@ -116,17 +116,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
-                    {{-- <div id="remember-forgot">
-                        <div id="remember-forgot">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">Remember me</label>
-                            <a href="#">Forgot your password?</a>
-                        </div>
-                    </div> --}}
                     <button type="submit"><a><span>REGISTER</span></a></button>
                     <div class="register-here">
                         <a href="/login">Already have an account? Log in here!</a>
