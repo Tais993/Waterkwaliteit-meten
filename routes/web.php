@@ -29,6 +29,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/store', function () {
+    return view('store');
+});
+
 Route::get('/landen/senegal', function () {
     return view('countries/senegal');
 });

@@ -23,20 +23,6 @@
 
         @include('components.nav')
       </div>
-
-      <div id="nav-modal" class="nav-modal">
-        <div class="nav-modal-content">
-          <div class="nav-modal-close"><span class="nav-close">&times;</span></div>
-          <div class="nav-modal-links">
-            <a href="./index.html">HOME</a>
-            <a href="./store.html">STORE</a>
-            <a href="./about.html">ABOUT</a>
-            <a href="./contact.html">CONTACT</a>
-            <a href="./login.html">LOGIN <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i></a>
-          </div>
-        </div>
-      </div>
-
       <div id="about">
         <div class="big-card">
           <div class="big-card-title">
