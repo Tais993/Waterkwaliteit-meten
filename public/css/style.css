@@ -564,7 +564,7 @@
     }
   }
   
-  #about, #contact, #login, #register {
+  #about, #contact, #login, #register, #reset {
     
     margin: 5rem auto;
     display: flex;
@@ -1080,4 +1080,47 @@
 
   #login form button {
     margin: 3rem auto 1rem auto ;
+  }
+
+  #reset form {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+
+  #reset button {
+    display: block;
+    border: none;
+    border-radius: 0.625rem;
+    background: var(--blue-color);
+    width: 60%;
+    margin: 0 auto;
+    font-family: Koulen, sans-serif;
+    font-size: 2.25rem;
+    text-align: center;
+  }
+  
+  #reset button a span {
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  #reset button a span:after {
+    content: ' >';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  #reset button:hover a span {
+    padding-right: 25px;
+  }
+  
+  #reset button:hover a span:after {
+    opacity: 1;
+    right: 0;
   }
