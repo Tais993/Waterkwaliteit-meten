@@ -47,7 +47,7 @@
                             exercitation ullamco laboris nisi 
                             ut aliquip ex ea commodo consequat.
                         </p>
-                        <button id="buy-btn" type="button"><a href="#"><span>BUY</span></a></button>
+                        <button id="buy-btn" class="product-btn" type="button"><a href="#"><span>BUY</span></a></button>
                     </div>
                 </div>
                 <div class="product-desc">

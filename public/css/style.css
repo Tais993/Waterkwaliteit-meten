@@ -1364,3 +1364,7 @@
     font-weight: bold;
     width: 50%;
   }
+
+  .product-btn {
+    margin-top: 2rem !important;
+  }
