@@ -1339,7 +1339,6 @@
   .product-hero {
     display: grid;
     grid-template-columns: 50% 50%;
-    border-bottom: 1px solid #6B6B6B;
     margin-bottom: 2rem;
   }
 
@@ -1348,8 +1347,10 @@
   }
 
   .product-hero img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
+    max-height: 30rem;
+    margin: 0 auto;
   }
 
   .product-price {
