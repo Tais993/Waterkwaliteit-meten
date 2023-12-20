@@ -31,21 +31,21 @@
           </div>
             <div id="content">
               <p>
-                <strong>Over AQUALITY</strong><br><br>
-                Bij AQUALITY geloven we in de kracht van water als een
-                essentiële levensbron en de impact die het heeft op gemeenschappen
-                wereldwijd. Sinds onze oprichting hebben we ons toegewijd aan het
-                meten en verbeteren van de waterkwaliteit in Afrika, Zuid-Amerika en
-                Azië. Ons verhaal begint met een passie voor positieve verandering,
-                gedreven door het besef dat toegang tot schoon water een fundamenteel
-                recht is dat iedereen verdient.<br><br>
+                <strong>About AQUALITY</strong><br><br>
+                At AQUALITY, we believe in the power of water as an essential 
+                life source and the impact it has on communities worldwide. 
+                Since our inception, we have been dedicated to measuring and 
+                improving water quality in Africa, South America, and Asia. Our 
+                story begins with a passion for positive change, driven by the 
+                realization that access to clean water is a fundamental right 
+                that everyone deserves.<br><br>
 
-                Ons team bestaat uit een diverse groep professionals. Samen
-                delen we een gezamenlijke visie: een wereld waarin waterbronnen
-                veilig, schoon en toegankelijk zijn voor alle gemeenschappen. Met
-                deze visie als leidraad streven we naar duurzame oplossingen die
-                niet alleen de waterkwaliteit meten, maar ook een blijvende positieve
-                invloed hebben op de levensomstandigheden van de mensen om ons heen.
+                Our team consists of a diverse group of professionals. Together, 
+                we share a common vision: a world where water sources are safe, 
+                clean, and accessible to all communities. Guided by this vision, 
+                we strive for sustainable solutions that not only measure water 
+                quality but also have a lasting positive impact on the living 
+                conditions of the people around us.
               </p>
             </div>
         </div>

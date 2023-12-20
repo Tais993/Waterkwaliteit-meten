@@ -27,6 +27,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/product', function () {
+    return view('product');
+});
+
 Route::get('/about', function () {
     return view('about');
 });
@@ -38,15 +42,15 @@ Route::get('/store', function () {
     return view('store')->with('products', $products);
 });
 
-Route::get('/landen/senegal', function () {
+Route::get('/countries/senegal', function () {
     return view('countries/senegal');
 });
 
-Route::get('/landen/haiti', function () {
+Route::get('/countries/haiti', function () {
     return view('countries/haiti');
 });
 
-Route::get('/landen/laos', function () {
+Route::get('/countries/laos', function () {
     return view('countries/laos');
 });
 

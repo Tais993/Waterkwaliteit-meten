@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AQUALITY | REGISTER</title>
+    <title>AQUALITY | SIGN UP</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Mako&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
     <div id="register">
         <div class="big-card">
             <div class="big-card-title">
-                <h1>REGISTER</h1>
+                <h1>SIGN UP</h1>
                 <img src="{{ url('images/login.png') }}" alt="login image">
             </div>
             <div id="content">
@@ -168,7 +168,7 @@
                         </div>
                     </div>
 
-                    <button type="submit">Register</button>
+                    <button type="submit"><a><span>SIGN UP</span></a></button>
                     <div class="register-here">
                         <a href="{{ route('login') }}">Already have an account? Log in here!</a>
                     </div>

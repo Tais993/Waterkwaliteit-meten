@@ -59,7 +59,7 @@
                                 @else
                                     <div class="stock-status-almostsoldout"></div>
                                     LAST ITEMS
-                                @endif
+                                @endif  
                             </div>
                             <button id="info-btn" type="button"><a href="#"><span>INFO</span></a></button>
                             @if($product->voorraad > 0)

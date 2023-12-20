@@ -34,34 +34,34 @@
                 <div class="row g-2">
                     <div class="col-md">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="John">
-                            <label for="floatingInput">First name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="John">
+                            <label for="firstName">FIRST NAME</label>
                           </div>
                     </div>
                     <div class="col-md">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Doe">
-                            <label for="floatingInput">Last name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Doe">
+                            <label for="lastName">LAST NAME</label>
                         </div>
                     </div>
                 </div>
                 <div class="row g-2">
                     <div class="col-md">
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="johndoe@example.com">
-                            <label for="floatingInput">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="johndoe@example.com">
+                            <label for="email">EMAIL</label>
                           </div>
                     </div>
                     <div class="col-md">
                         <div class="form-floating mb-3">
-                            <input type="tel" class="form-control" id="floatingInput" placeholder="+31 6 12345678">
-                            <label for="floatingInput">Phone</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="+31 6 12345678">
+                            <label for="phone">PHONE</label>
                         </div>
                     </div>
                 </div>
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 10rem"></textarea>
-                    <label for="floatingTextarea">Message</label>
+                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 10rem"></textarea>
+                    <label for="message">MESSAGE</label>
                   </div>
                   <button type="submit"><a><span>SEND</span></a></button>
                 </form>

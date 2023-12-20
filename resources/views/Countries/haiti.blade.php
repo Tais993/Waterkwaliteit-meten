@@ -37,19 +37,19 @@
                   </div>
                     <div class="text">
                         <p>
-                          Haïti is een land met uitdagende wateromstandigheden,
-                          AQUALITY spant zich in voor waterkwaliteitsmetingen
-                          en verbeteringen voor de verschillende waterbronnen.
-                          Van stedelijke gebieden tot afgelegen gemeenschappen,
-                          maken onze meetapparatuur een gedetailleerde analyse van de
-                          waterkwaliteit, rekening houdend met lokale factoren zoals
-                          menselijke activiteiten en geografie. Onze nauwe samenwerking
-                          met lokale leiders en overheidsinstanties is cruciaal voor
-                          het aanpakken van de specifieke uitdagingen in elke regio.
-                          Met de focus op bewustmaking streven we niet alleen naar schone
-                          waterbronnen, maar ook naar veerkrachtige gemeenschappen die
-                          zelf een rol spelen in duurzaam waterbeheer. Ontdek de metingen
-                          die zijn gedaan in Haïti hieronder.
+                          Haiti is a country with challenging water conditions, 
+                          and AQUALITY is dedicated to water quality measurements 
+                          and improvements for various water sources. From urban 
+                          areas to remote communities, our measurement equipment 
+                          conducts a detailed analysis of water quality, taking 
+                          into account local factors such as human activities 
+                          and geography. Our close collaboration with local 
+                          leaders and government agencies is crucial for 
+                          addressing the specific challenges in each region. 
+                          With a focus on awareness, we aim not only for clean 
+                          water sources but also for resilient communities actively 
+                          involved in sustainable water management. Explore the 
+                          measurements taken in Haiti below.
                         </p>
                     </div>
                 </div>
