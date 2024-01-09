@@ -57,7 +57,7 @@
                             <label for="street" class="col-md-4 col-form-label text-md-end">{{ __('street') }}</label>
 
                             <div class="col-md-6">
-                                <input id="street" type="text" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ old('street') }}" required autocomplete="street-address" autofocus>
+                                <input id="street" type="text" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ old('street') }}" required autocomplete="address-line1" autofocus>
 
                                 @error('street')
                                 <span class="invalid-feedback" role="alert">

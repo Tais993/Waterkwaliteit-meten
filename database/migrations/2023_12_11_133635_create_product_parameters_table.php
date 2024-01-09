@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('parameter_product', function (Blueprint $table) {
+        Schema::create('device_parameter', function (Blueprint $table) {
             $table->id();
 
             $table->unsignedBigInteger("parameter_id");

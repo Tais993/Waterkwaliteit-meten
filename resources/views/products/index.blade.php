@@ -9,13 +9,15 @@
 
                     <div class="card-body">
                         @if (session('success'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('success') }}
+                            <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                                <strong>{{ session('success') }}</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @endif
                         @if (session('failure'))
-                            <div class="alert alert-danger" role="alert">
-                                {{ session('failure') }}
+                            <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                                <strong>{{ session('failure') }}</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @endif
 
@@ -42,7 +44,17 @@
                                     <td>{{ $product->type }}</td>
                                     <td>{{ $product->voorraad }}</td>
                                     <td>@foreach($product->parameters as $parameter) {{ $parameter->naam }}@endforeach</td>
-                                    <!-- Add other columns' data as needed -->
+                                    <td>
+                                        <!-- Edit button -->
+                                        <a href="{{ route('products.edit', ['product' => $product->id]) }}" class="btn btn-primary">Edit</a>
+
+                                        <!-- Delete button (example, consider confirmation dialogs) -->
+                                        <form action="{{ route('products.delete', ['product' => $product->id]) }}" method="POST" style="display: inline-block;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

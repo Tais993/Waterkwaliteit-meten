@@ -6,7 +6,7 @@ use App\Models\Parameter;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\QueryException;
-use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class ParameterController extends Controller
@@ -35,36 +35,51 @@ class ParameterController extends Controller
                 return redirect()->route('parameters.index')->with('success', 'Parameter created successfully!');
 
             } catch (QueryException $e){
-                // If a query exception occurs, handle the error
-                $errorMessage = $e->getMessage();
+
                 return redirect()->route('parameters.create')->with('error', 'duplicate entry for parameter');
-                }
-            } else {
+            }
+        } else {
 
             return redirect()->route('parameters.create')->with('failure', 'Parameter not created. Please try again.');
         }
     }
 
-    public function read($id): JsonResponse
+    public function read($id): RedirectResponse|View
     {
         $parameter = Parameter::find($id);
 
         if (!$parameter) {
-            return response()->json(['message' => 'Parameter not found'], 404);
+            return redirect()->route('products.index')->with('failure', 'Parameter not found!');
         }
 
-        // Return the parameter details
-        return response()->json($parameter);
+        return view('parameters.edit', compact('parameter'));
     }
 
-    public function update(Request $request, $id): JsonResponse
+    public function update(Request $request, $id): RedirectResponse
     {
-        // Similar logic for updating a parameter by ID
+        $parameter = Parameter::find($id);
+
+        if (!$parameter) {
+            return redirect()->route('parameters.index')->with('failure', 'Parameter not found!');
+        }
+
+        // Update product attributes
+        $parameter->update($request->all());
+
+        return redirect()->route('parameters.index')->with('success', 'Parameter updated successfully!');
     }
 
-    public function delete($id): JsonResponse
+    public function delete($id): RedirectResponse
     {
-        // Similar logic for deleting a parameter by ID
+        $parameter = Parameter::find($id);
+
+        if (!$parameter) {
+            return redirect()->route('parameters.index')->with('failure', 'Parameter not found!');
+        }
+
+        $parameter->delete();
+
+        return redirect()->route('parameters.index')->with('success', 'Parameter deleted successfully!');
     }
 
     public function index(): View

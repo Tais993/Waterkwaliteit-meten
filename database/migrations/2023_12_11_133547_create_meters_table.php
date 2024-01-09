@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('meters', function (Blueprint $table) {
+        Schema::create('device_user', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger("product_id");
+            $table->unsignedBigInteger("device_id");
             $table->unsignedBigInteger("user_id");
 
             $table->timestamps();
 
-            $table->foreign("product_id")->references("id")->on("products");
+            $table->foreign("product_id")->references("id")->on("devices");
             $table->foreign("user_id")->references("id")->on("users");
 
         });

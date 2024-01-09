@@ -3,6 +3,7 @@
 use App\Http\Controllers\ArduinoController;
 use App\Http\Controllers\ParameterController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Auth::routes();
 
 Route::get('/', function () {
@@ -50,25 +52,37 @@ Route::get('/landen/laos', function () {
     return view('countries/laos');
 });
 
-Route::get('/dashboard', function () {
-    // Check if the user is authenticated and has an admin role
-    if (auth()->check() && auth()->user()->role_id === 1) {
-        return view('home');
-    }
+Route::middleware('auth')->group(function() {
 
-    // Redirect or return a response indicating unauthorized access
-    return redirect('/')->with('error', 'Unauthorized access');
-})->name('dashboard')->middleware('auth');
+    Route::get('/dashboard', fn() => view('home'))->name('dashboard');
+
+});
 
 Route::get('/landen/senegal', [ArduinoController::class, 'getMeasuredData']);
 
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::middleware('admin')->group(function () {
 
-Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
-Route::post('/products/create', [ProductController::class, 'create']);
+    Route::get('/admin/dashboard', fn() => view('home'))->name('admin.dashboard');
 
-Route::get('/parameters', [ParameterController::class, 'index'])->name('parameters.index');
+    Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+    Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+    Route::post('/products/create', [ProductController::class, 'create']);
+    Route::get('/products/edit/{product}', [ProductController::class, 'read'])->name('products.edit');
+    Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
+    Route::delete('/products/delete/{product}', [ProductController::class, 'delete'])->name('products.delete');
 
-Route::get('/parameters/create', [ParameterController::class, 'create'])->name('parameters.create');
-Route::post('/parameters/create', [ParameterController::class, 'create'])->name('parameters.create');
+    Route::get('/parameters', [ParameterController::class, 'index'])->name('parameters.index');
+    Route::get('/parameters/create', [ParameterController::class, 'create'])->name('parameters.create');
+    Route::post('/parameters/create', [ParameterController::class, 'create'])->name('parameters.create');
+    Route::get('/parameters/edit/{parameter}', [ParameterController::class, 'read'])->name('parameters.edit');
+    Route::put('/parameters/{parameter}', [ParameterController::class, 'update'])->name('parameters.update');
+    Route::delete('/parameters/delete/{parameter}', [ParameterController::class, 'delete'])->name('parameters.delete');
 
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+    Route::post('/users/create', [UserController::class, 'create'])->name('users.create');
+    Route::get('/users/edit/{user}', [UserController::class, 'read'])->name('users.edit');
+    Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+    Route::delete('/users/delete/{user}', [UserController::class, 'delete'])->name('users.delete');
+
+});
