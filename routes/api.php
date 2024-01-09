@@ -30,5 +30,5 @@ Route::post('/products/create', [ProductController::class, 'create']);
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
 Route::get('/products', [ProductController::class, 'apiIndex'])->name('products.index');
 
-Route::get('/create', [UserController::class, 'create']);
-Route::get('/login', [loginController::class, 'login']);
+Route::post('/create', [UserController::class, 'create']);
+Route::post('/login', [loginController::class, 'login']);
