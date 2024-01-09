@@ -52,7 +52,6 @@ class LoginController extends Controller
 
         if (!Auth::attempt($request->only('email', 'password'))) {
             return response()->json('error!', 400);
-
         }
 
         return response()->json('logged in!', 200);
