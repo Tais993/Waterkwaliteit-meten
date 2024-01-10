@@ -9,8 +9,6 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\ValidationException;
-use Symfony\Component\HttpFoundation\Response;
 
 class LoginController extends Controller
 {
@@ -44,7 +42,7 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function login(Request $request): JsonResponse
+    public function ApiLogin(Request $request): JsonResponse
     {
         // Validate the request data
         $validator = Validator::make($request->all(), [
@@ -71,7 +69,6 @@ class LoginController extends Controller
         // Return a JSON response with the token
         return response()->json(['token' => $token], 200);
     }
-
 
     public function checkAuth(Request $request): JsonResponse
     {

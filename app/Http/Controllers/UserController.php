@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\QueryException;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
@@ -124,5 +126,26 @@ class UserController extends Controller
     {
         // Fetching parameters
         return User::all();
+    }
+
+    public function ApiShow(): JsonResponse
+    {
+        // Check if the user is authenticated
+        if (Auth::check()) {
+            // Retrieve the authenticated user
+            $user = Auth::user();
+
+            // Get the user's role (assuming a relationship exists between User and Role models)
+            $role = $user->role->name ?? 'No role assigned'; // Assuming a 'role' relationship
+
+            // Return the user details along with their role
+            return response()->json([
+                'user' => $user,
+                'role' => $role,
+            ]);
+        } else {
+            // User is not authenticated
+            return response()->json(['message' => 'User is not authenticated'], 401);
+        }
     }
 }

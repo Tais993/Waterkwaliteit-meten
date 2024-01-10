@@ -32,8 +32,6 @@ Route::get('/products', [ProductController::class, 'apiIndex'])->name('products.
 
 Route::post('/create', [UserController::class, 'create']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-Route::post('/login', [loginController::class, 'login']);
+Route::post('/login', [loginController::class, 'ApiLogin']);
+Route::middleware('auth:sanctum')->get('/user', [UserController::class, 'show']);
 Route::middleware('auth:sanctum')->post('/checkAuth', [loginController::class, 'checkAuth']);
