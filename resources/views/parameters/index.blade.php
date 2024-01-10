@@ -9,27 +9,30 @@
 
                     <div class="card-body">
                         @if (session('success'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('success') }}
+                            <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                                <strong>{{ session('success') }}</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @endif
                         @if (session('failure'))
-                            <div class="alert alert-danger" role="alert">
-                                {{ session('failure') }}
+                            <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                                <strong>{{ session('failure') }}</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @endif
 
-                            <div class="d-flex justify-content-between">
-                                <h2>All Parameters</h2>
-                                <a href="{{ route('parameters.create') }}" class="btn btn-primary">ADD</a>
-                            </div>
+                        <div class="d-flex justify-content-between">
+                            <h2>All Parameters</h2>
+                            <a href="{{ route('parameters.create') }}" class="btn btn-primary">ADD</a>
+                        </div>
 
-                            <table class="table">
+                        <table class="table">
                             <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>meet eenheid</th>
+                                <th>Actions</th>
                             </tr>
                             </thead>
 
@@ -39,6 +42,17 @@
                                     <td>{{ $parameter->id }}</td>
                                     <td>{{ $parameter->naam }}</td>
                                     <td>{{ $parameter->meetEenheid }}</td>
+                                    <td>
+                                        <!-- Edit button -->
+                                        <a href="{{ route('parameters.edit', ['parameter' => $parameter->id]) }}" class="btn btn-primary">Edit</a>
+
+                                        <!-- Delete button (example, consider confirmation dialogs) -->
+                                        <form action="{{ route('parameters.delete', ['parameter' => $parameter->id]) }}" method="POST" style="display: inline-block;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

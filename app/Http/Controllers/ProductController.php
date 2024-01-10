@@ -6,7 +6,7 @@ use App\Models\Parameter;
 use App\Models\Product;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -49,49 +49,58 @@ class ProductController extends Controller
 
     /**
      * @param $id
-     * @return JsonResponse
+     * @return RedirectResponse|View
      */
-    public function read($id): JsonResponse
+    public function read($id): RedirectResponse|View
     {
-        $product = Product::find($id);
-
+        $product = Product::with('parameters')->find($id);
+        $parameters = Parameter::all();
         if (!$product) {
-            return response()->json(['message' => 'Product not found'], 404);
+            return redirect()->route('products.index')->with('failure', 'Product not found!');
         }
 
-        return $product;
+        return view('products.edit', compact('product', 'parameters'));
     }
 
     /**
      * @param Request $request
      * @param $id
-     * @return JsonResponse
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id): JsonResponse
+    public function update(Request $request, $id): RedirectResponse
     {
         $product = Product::find($id);
 
         if (!$product) {
-            return response()->json(['message' => 'Product not found'], 404);
+            return redirect()->route('products.index')->with('failure', 'Product not found!');
         }
 
-        $product->update($request->all());
+        // Update product attributes
+        $product->update($request->only(['naam', 'type', 'voorraad']));
 
-        return $product;
+        // Update product parameters
+        $parameters = $request->input('parameters', []);
+        $product->parameters()->sync($parameters);
+
+        return redirect()->route('products.index')->with('success', 'Product updated successfully!');
     }
 
-    public function delete($id): JsonResponse
+    /**
+     * @param $id
+     * @return RedirectResponse
+     */
+    public function delete($id): RedirectResponse
     {
         $product = Product::find($id);
 
         if (!$product) {
-            return response()->json(['message' => 'Product not found'], 404);
+            return redirect()->route('products.index')->with('failure', 'Product not found!');
         }
 
         $product->parameters()->detach(); // Assuming you want to detach parameters related to this product first
         $product->delete();
 
-        return response()->json(['message' => 'Product deleted successfully']);
+        return redirect()->route('products.index')->with('success', 'Product deleted successfully!');
     }
 
     /**

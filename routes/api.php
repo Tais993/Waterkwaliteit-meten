@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArduinoController;
@@ -27,3 +29,6 @@ Route::controller(ArduinoController::class)->group(function () {
 Route::post('/products/create', [ProductController::class, 'create']);
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
 Route::get('/products', [ProductController::class, 'apiIndex'])->name('products.index');
+
+Route::post('/create', [UserController::class, 'create']);
+Route::post('/login', [loginController::class, 'login']);

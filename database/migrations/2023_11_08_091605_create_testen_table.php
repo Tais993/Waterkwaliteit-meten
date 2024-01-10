@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('testen', function (Blueprint $table) {
+        Schema::create('measurements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('waterbronnen_id')->constrained('waterbronnen');
+            $table->foreignId('watersource_id')->constrained('watersources');
 
             $table->timestamp('getest_op');
             $table->dateTime('datumTijd');
