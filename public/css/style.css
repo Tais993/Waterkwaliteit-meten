@@ -1501,3 +1501,7 @@
   .product-btn {
     margin-top: 2rem !important;
   }
+
+  #product-specs > :not(caption) > * > * {
+    border-bottom: none;
+  }

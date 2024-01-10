@@ -66,7 +66,7 @@
                 <div class="product-specs">
                     <h2>SPECIFICATIONS</h2>
                     <div class="table-wrapper">
-                        <table class="table">
+                        <table class="table" id="product-specs">
                           <tbody>
                             <tr>
                               <td class="spec">Specification</td>
