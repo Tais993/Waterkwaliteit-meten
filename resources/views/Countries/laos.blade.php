@@ -38,19 +38,18 @@
                   </div>
                     <div class="text">
                         <p>
-                          In Laos, te midden van betoverende landschappen,
-                          zet AQUALITY zich in voor het meten en
-                          verbeteren van de waterkwaliteit. Of het nu
-                          stedelijke centra betreft of afgelegen gebieden,
-                          onze meetappratuur analyseren nauwkeurig de waterkwaliteit,
-                          rekening houdend met lokale variabelen zoals menselijke
-                          activiteiten en geografische kenmerken. Onze nauwe samenwerking
-                          met lokale gemeenschappen en overheidspartners is van vitaal
-                          belang om de specifieke uitdagingen van elke regio aan te pakken.
-                          Door bewustmaking streven we naar niet alleen schone waterbronnen,
-                          maar ook naar veerkrachtige gemeenschappen die actief bijdragen
-                          aan duurzaam waterbeheer. Ontdek de metingen die zijn gedaan in
-                          Laos hieronder.
+                          In Laos, amidst enchanting landscapes, AQUALITY 
+                          is dedicated to measuring and improving water quality. 
+                          Whether in urban centers or remote areas, our measurement 
+                          equipment accurately analyzes water quality, taking 
+                          into consideration local variables such as human 
+                          activities and geographical features. Our close 
+                          collaboration with local communities and government 
+                          partners is vital to addressing the specific challenges 
+                          of each region. Through awareness-raising, we aim not 
+                          only for clean water sources but also for resilient 
+                          communities actively contributing to sustainable water 
+                          management. Explore the measurements taken in Laos below.
                         </p>
                     </div>
                 </div>

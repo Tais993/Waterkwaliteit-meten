@@ -28,12 +28,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-        <h1>EEN GOEDE WATERKWALITEIT VOOR IEDEREEN</h1>
+        <h1>GREAT WATER QUALITY FOR EVERYONE</h1>
         <p>
-          Welkom bij AQUALITY, waar we ons  inzetten om de waterkwaliteit in Afrika,
-          Zuid-Amerika en Azië te meten en deze resultaten beschikbaar te stellen
-          voor de buitenwereld. Ontdek hoe wij de kracht van technologie
-          inzetten om de kwaliteit van het water wereldwijd in kaart te brengen.
+          Welcome to AQUALITY, where we are committed to measuring 
+          water quality in Africa, South America, and Asia, and making 
+          these results available to the world. Discover how we harness 
+          the power of technology to map water quality globally.
         </p>
       </div>
 
@@ -57,8 +57,8 @@
           </div>
           <button type="button"><a href="/landen/senegal"><span>MORE INFO</span></a></button>
         </div>
-      <!-- </a> -->
-      <!-- <a href="./countries/haiti.html"> -->
+      <!-- </a>
+      <a href="./countries/haiti.html"> -->
         <div class="data-card">
           <h2>HAITI</h2>
           <div class="data-img">
@@ -86,14 +86,13 @@
         </div>
         <div id="content">
           <p>
-            <strong>Waarom waterkwaliteit belangrijk is</strong><br><br>
-            Schone waterbronnen zijn essentieel voor het welzijn van
-            gemeenschappen over de hele wereld. Bij AQUALITY
-            begrijpen we dat de kwaliteit van water direct van invloed
-            is op de gezondheid en levenskwaliteit. Ontdek de uitdagingen
-            waarmee we worden geconfronteerd en hoe ons werk bijdraagt aan
-            het verbeteren van de waterkwaliteit, wat op zijn beurt bijdraagt
-            aan een gezondere leefomgeving voor iedereen.
+            <strong>Why Water Quality Matters</strong><br><br>
+            Clean water sources are essential for the well-being 
+            of communities worldwide. At AQUALITY, we understand 
+            that water quality directly impacts health and quality 
+            of life. Explore the challenges we face and how our 
+            work contributes to improving water quality, which 
+            in turn enhances a healthier living environment for everyone.
           </p>
         </div>
       </div>

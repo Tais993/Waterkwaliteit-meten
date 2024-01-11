@@ -37,17 +37,16 @@
             </div>
             <div class="text">
               <p>
-                In Senegal, een land van diverse landschappen, zetten
-                we ons bij AQUALITY in voor het meten en verbeteren
-                van de waterkwaliteit. Van stedelijke gebieden tot afgelegen
-                dorpen, onze meetapparatuur verzamelen cruciale gegevens
-                over waterkwaliteit en factoren als menselijke activiteiten
-                en klimaatomstandigheden. Onze samenwerking met lokale gemeenschappen
-                en overheidspartners is essentieel, en we streven naar duurzame
-                oplossingen die de unieke behoeften van elke regio aanpakken. Door
-                bewustmaking vergroten we niet alleen de lokale betrokkenheid,
-                maar bevorderen we ook de veerkracht van Senegal op het gebied van
-                waterbeheer. Ontdek de metingen die zijn gedaan in Senegal hieronder.
+                In Senegal, a country with diverse landscapes, we at AQUALITY 
+                are dedicated to measuring and improving water quality. From 
+                urban areas to remote villages, our measurement devices gather 
+                crucial data on water quality and factors such as human activities 
+                and climate conditions. Our collaboration with local communities 
+                and government partners is essential, and we aim for sustainable 
+                solutions that address the unique needs of each region. Through 
+                awareness-raising, we not only enhance local engagement but also 
+                promote Senegal's resilience in water management. Explore the 
+                measurements taken in Senegal below.
               </p>
             </div>
           </div>
