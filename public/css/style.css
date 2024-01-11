@@ -1328,7 +1328,7 @@
     }
   }
 
-  /* @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 900px) {
     .product:not(:first-of-type) {
       margin-top: 2rem;
     }
@@ -1374,7 +1374,7 @@
       justify-content: space-between;
     
     }
-  } */
+  }
 
   @media only screen and (max-width: 500px) {
     .product-list {
@@ -1505,4 +1505,8 @@
 
   #product-specs > :not(caption) > * > * {
     border-bottom: none;
+  }
+
+  #admin-p {
+    margin: 2rem;
   }
