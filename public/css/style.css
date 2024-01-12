@@ -1329,56 +1329,8 @@
   }
 
   @media only screen and (max-width: 900px) {
-    .product:not(:first-of-type) {
-      margin-top: 2rem;
-    }
-
-    .product {
-      justify-content: center;
-      grid-template-columns: 30% 40% 30%;
-      gap: 0;
-    }
-
-    .product-ls-img {
-      grid-row: 1 / span 2;
-      max-width: none;
-      max-height: 100%;
-    }
-  
-    .product-ls-img img {
-      width: 100%;
-      height: auto;
-      vertical-align: middle;
-    }
-
-    #info-btn {
-      display: none;
-    }
-
-    #buy-btn {
-      width: 80%;
-      
-    }
-
-    .product-ls-desc {
-      padding: 0;
-    }
-
-    .product-ls-desc p {
-      max-height: 4.8rem;
-      text-overflow: ellipsis;
-      overflow: hidden;
-    }
-
-    .product-ls-price {
-      justify-content: space-between;
-    
-    }
-  }
-
-  @media only screen and (max-width: 500px) {
     .product-list {
-      max-width: 90%;
+      max-width: 80%;
       width: 100%;
       height: 100%;
       margin: 3rem auto;
@@ -1387,12 +1339,15 @@
     .product {
       display: block;
       border-bottom: 1px solid #6B6B6B;
+      justify-content: center;
+    }
+
+    .product-ls-img {
+      margin: 0 auto;
     }
   
     .product-ls-img img {
-      width: auto;
-      height: 100%;
-      margin: 0 auto !important;
+      max-width: 100%;
     }
 
     #price-stock {
