@@ -8,13 +8,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Parameter extends Model
 {
-    public $timestamps = false;
     protected $fillable = [
-        'naam',
-        'meetEenheid'
+        'name',
+        'measuring_unit'
     ];
-    public function Product(): BelongsToMany
+    public function DeviceType(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class, 'product_parameters', 'parameter_id', 'product_id');
+        return $this->belongsToMany(Product::class, 'deviceType_parameter', 'parameter_id', 'deviceType_id');
     }
 }

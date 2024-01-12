@@ -11,12 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('measurements', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('watersource_id')->constrained('watersources');
+        Schema::create('devices', function (Blueprint $table) {
 
-            $table->timestamp('getest_op');
-            $table->dateTime('datumTijd');
+            $table->id();
+
+            $table->foreignId("deviceType_id")->constrained("deviceTypes");
+            $table->foreignId("user_id")->nullable()->constrained("users");
+            $table->string("macaddress");
+
+            $table->timestamps();
         });
     }
 
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('testen');
+        Schema::dropIfExists('devices');
     }
 };

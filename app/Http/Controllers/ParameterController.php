@@ -27,9 +27,8 @@ class ParameterController extends Controller
                 ]);
 
                 Parameter::create([
-                    'naam' => $validatedData['naam'],
-                    'meetEenheid' => $validatedData['meetEenheid'],
-                    'created_at' => now()
+                    'name' => $validatedData['naam'],
+                    'measuring_unit' => $validatedData['meetEenheid'],
                 ]);
 
                 return redirect()->route('parameters.index')->with('success', 'Parameter created successfully!');

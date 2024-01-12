@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->text('api_token')->nullable()->after('password');
+        Schema::create('watersources', function (Blueprint $table) {
+            $table->id();
+
+            $table->string("name")->unique();
+            $table->string("country")->nullable();
+            $table->string("type")->unique();
+
+            $table->timestamps();
         });
     }
 
@@ -21,8 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('api_token');
-        });
+        Schema::dropIfExists('watersources');
     }
 };

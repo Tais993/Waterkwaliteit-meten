@@ -11,16 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('device_parameter', function (Blueprint $table) {
+        Schema::create('deviceType_parameter', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger("parameter_id");
-            $table->unsignedBigInteger("product_id");
+            $table->foreignId("parameter_id")->constrained("parameters");
+            $table->foreignId("deviceType_id")->constrained("deviceTypes");
 
             $table->timestamps();
-
-            $table->foreign("parameter_id")->references("id")->on("parameters");
-            $table->foreign("product_id")->references("id")->on("products");
         });
     }
 
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product_parameters');
+        Schema::dropIfExists('deviceType_parameter');
     }
 };

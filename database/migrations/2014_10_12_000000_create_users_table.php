@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('country')->nullable();
             $table->string('password');
+            $table->text('api_token')->nullable();
 
             $table->rememberToken();
             $table->unsignedBigInteger('role_id')->default(2);
