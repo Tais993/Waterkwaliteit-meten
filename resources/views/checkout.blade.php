@@ -157,12 +157,9 @@
                     <button type="submit"><a><span>PROCEED</span></a></button>
                 </form>
             </div>
-
-
             </div>
         </div>
     </div>
-
 
 @include('components.footer')
 
