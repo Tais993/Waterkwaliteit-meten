@@ -37,6 +37,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/checkout', function () {
+    return view('checkout');
+});
+
 Route::get('/store', function () {
 
     $products = Product::with('parameters')->get();
