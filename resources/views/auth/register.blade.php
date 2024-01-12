@@ -83,6 +83,13 @@
                         </div>
                     </div>
 
+                    <div class="form-floating mb-3">
+                        <select type="text" class="form-select" id="country" name="country">
+                            <option selected>COUNTRY</option>
+                        </select>
+                        <label for="country">Please select your country</label>
+                    </div>
+
                     <div class="row g-2">
                         <div class="col-md">
                             <div class="form-floating mb-3">
@@ -123,27 +130,14 @@
                         </div>
 
                         <div class="col-md">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="city" name="city" placeholder="Eindhoven">
-                                <label for="city">CITY</label>
-                                @error('city')
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </div>
-                                @enderror
+                            <div class="col-md">
+                                <div class="form-floating mb-3">
+                                    <select type="text" class="form-select" id="city" name="city">
+                                        <option selected>CITY</option>
+                                    </select>
+                                    <label for="country">Please select your city</label>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md regform">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="country" name="country" placeholder="5612 MA">
-                            <label for="country">COUNTRY</label>
-                            @error('country')
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </div>
-                            @enderror
                         </div>
                     </div>
 

@@ -98,6 +98,13 @@
                         </div>
                     </div>
 
+                    <div class="form-floating mb-3">
+                        <select type="text" class="form-select" id="country" name="country">
+                            <option selected>COUNTRY</option>
+                        </select>
+                        <label for="country">Please select your country</label>
+                    </div>
+
                     <div class="row g-2">
                         <div class="col-md">
                             <div class="form-floating mb-3">
@@ -139,56 +146,10 @@
 
                         <div class="col-md">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="city" name="city" placeholder="Eindhoven">
-                                <label for="city">CITY</label>
-                                @error('city')
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </div>
-                                @enderror
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md regform">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="country" name="country" placeholder="5612 MA">
-                            <label for="country">COUNTRY</label>
-                            @error('country')
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </div>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <select class="form-select" id="country-1" name="country-1" aria-label="Floating label select example">
-                          <option selected>Open this select menu</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                        </select>
-                        <label for="country-1">Works with selects</label>
-                      </div>
-
-                    <div class="row g-2">
-                        <div class="col-md">
-                            <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="password" name="password" placeholder="5612 MA">
-                                <label for="password">PASSWORD</label>
-                                @error('password')
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </div>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="col-md">
-                            <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="confirmPassword" name="password_confirmation" placeholder="Eindhoven">
-                                <label for="confirmPassword">CONFIRM PASSWORD</label>
+                                <select type="text" class="form-select" id="city" name="city">
+                                    <option selected>CITY</option>
+                                </select>
+                                <label for="country">Please select your city</label>
                             </div>
                         </div>
                     </div>
