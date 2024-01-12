@@ -162,7 +162,7 @@
                         </div>
                     </div>
 
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
                         <select class="form-select" id="country-1" name="country-1" aria-label="Floating label select example">
                           <option selected>Open this select menu</option>
                           <option value="1">One</option>
