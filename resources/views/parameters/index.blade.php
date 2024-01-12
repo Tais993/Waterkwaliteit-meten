@@ -40,8 +40,8 @@
                             @foreach($parameters as $parameter)
                                 <tr>
                                     <td>{{ $parameter->id }}</td>
-                                    <td>{{ $parameter->naam }}</td>
-                                    <td>{{ $parameter->meetEenheid }}</td>
+                                    <td>{{ $parameter->name }}</td>
+                                    <td>{{ $parameter->measuring_unit }}</td>
                                     <td>
                                         <!-- Edit button -->
                                         <a href="{{ route('parameters.edit', ['parameter' => $parameter->id]) }}" class="btn btn-primary">Edit</a>

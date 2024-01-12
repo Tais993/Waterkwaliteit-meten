@@ -11,11 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('watersources', function (Blueprint $table) {
+        Schema::create('tests', function (Blueprint $table) {
             $table->id();
-            $table->timestamp("gemaakt_op");
-            $table->string("naam");
-            $table->string("land");
+
+            $table->foreignId('watersource_id')->default(1)->constrained('watersources');
+            $table->foreignId('device_id')->constrained('devices');
+
+            $table->timestamp('tested_on');
+            $table->unsignedBigInteger("value");
+
+            $table->timestamps();
         });
     }
 
@@ -24,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('waterbronnen');
+        Schema::dropIfExists('tests');
     }
 };

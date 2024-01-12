@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('parameters', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('gemaakt_op')->nullable();
-            $table->string('meetEenheid')->unique();
-            $table->string('naam')->unique();
+            $table->string('measuring_unit')->unique();
+            $table->string('name')->unique();
+
+            $table->timestamps();
         });
     }
 
