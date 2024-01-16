@@ -10,7 +10,7 @@ class TestController extends Controller
 {
     public function apiFetch($id): JsonResponse
     {
-        $tests = Test::where('device_id', $id)->get();
+        $tests = Test::where('device_id', $id)->with('parameter', 'watersource')->get();
 
         if ($tests->isEmpty()) {
             return response()->json(['message' => 'No tests found for this device'], 404);

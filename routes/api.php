@@ -32,11 +32,12 @@ Route::post('/products/create', [DeviceTypeController::class, 'create']);
 Route::get('/products/create', [DeviceTypeController::class, 'create'])->name('products.create');
 Route::get('/products', [DeviceTypeController::class, 'apiIndex'])->name('products.index');
 
-Route::get('/devices/fetch/{id}', [DeviceController::class, 'apiFetch']);
-Route::get('/tests/fetch/{device_id}', [TestController::class, 'apiFetch']);
+Route::middleware('auth:sanctum')->get('/devices/fetch/{id}', [DeviceController::class, 'apiFetch']);
+Route::middleware('auth:sanctum')->get('/tests/fetch/{id}', [TestController::class, 'apiFetch']);
 
 Route::post('/create', [UserController::class, 'create']);
 
 Route::post('/login', [loginController::class, 'ApiLogin']);
+
 Route::middleware('auth:sanctum')->get('/user', [UserController::class, 'show']);
 Route::middleware('auth:sanctum')->post('/checkAuth', [loginController::class, 'checkAuth']);
