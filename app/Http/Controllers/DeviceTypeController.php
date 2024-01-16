@@ -31,7 +31,7 @@ class DeviceTypeController extends Controller
                 'price' => 'required|string',
                 'stock' => 'required|integer',
                 'description' => 'required|string',
-                'image' => 'string',
+                'image' => 'nullable|string',
                 'parameters' => 'required|array'
             ]);
 
@@ -44,8 +44,7 @@ class DeviceTypeController extends Controller
             ]);
 
             $product->parameters()->attach($validatedData['parameters']);
-
-            return redirect()->route('products .index')->with('success', 'Device type created successfully!');
+            return redirect()->route('products.index')->with('success', 'Device type created successfully!');
         } else {
             return redirect()->route('devicetype.create')->with('failure', 'Device type not created, try again!');
         }
