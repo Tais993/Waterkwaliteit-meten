@@ -5,12 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Product extends Model
+class DeviceType extends Model
 {
     protected $fillable = [
-        'naam',
-        'type',
-        'voorraad'
+        'name',
+        'price',
+        'stock',
+        'description',
+        'image'
     ];
 
     public function parameters(): BelongsToMany

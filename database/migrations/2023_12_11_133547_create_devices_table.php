@@ -15,7 +15,7 @@ return new class extends Migration
 
             $table->id();
 
-            $table->foreignId("deviceType_id")->constrained("deviceTypes");
+            $table->foreignId("device_type_id")->constrained("device_types");
             $table->foreignId("user_id")->nullable()->constrained("users");
             $table->string("macaddress");
 

@@ -14,6 +14,6 @@ class Parameter extends Model
     ];
     public function DeviceType(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class, 'deviceType_parameter', 'parameter_id', 'deviceType_id');
+        return $this->belongsToMany(DeviceType::class, 'deviceType_parameter', 'parameter_id', 'deviceType_id');
     }
 }

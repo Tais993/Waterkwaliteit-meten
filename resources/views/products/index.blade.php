@@ -23,7 +23,7 @@
 
                             <div class="d-flex justify-content-between">
                                 <h2>All Products</h2>
-                                <a href="{{ route('products.create') }}" class="btn btn-primary">ADD</a>
+                                <a href="{{ route('devicetype.create') }}" class="btn btn-primary">ADD</a>
                             </div>
 
                             <table class="table">
@@ -31,19 +31,22 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Type</th>
-                                <th>Voorraad</th>
+                                <th>Stock</th>
+                                <th>Description</th>
+                                <th>Price</th>
                                 <th>Parameters</th>
+                                <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($products as $product)
                                 <tr>
                                     <td>{{ $product->id }}</td>
-                                    <td>{{ $product->naam }}</td>
-                                    <td>{{ $product->type }}</td>
-                                    <td>{{ $product->voorraad }}</td>
-                                    <td>@foreach($product->parameters as $parameter) {{ $parameter->naam }}@endforeach</td>
+                                    <td>{{ $product->name }}</td>
+                                    <td>{{ $product->stock }}</td>
+                                    <td>{{ $product->description }}</td>
+                                    <td>{{ $product->price }}</td>
+                                    <td>@foreach($product->parameters as $parameter) {{ $parameter->name }}@endforeach</td>
                                     <td>
                                         <!-- Edit button -->
                                         <a href="{{ route('products.edit', ['product' => $product->id]) }}" class="btn btn-primary">Edit</a>

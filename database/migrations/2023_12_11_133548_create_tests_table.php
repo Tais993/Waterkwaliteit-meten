@@ -16,9 +16,9 @@ return new class extends Migration
 
             $table->foreignId('watersource_id')->default(1)->constrained('watersources');
             $table->foreignId('device_id')->constrained('devices');
-
+            $table->foreignId('parameter_id')->constrained('parameters');
             $table->timestamp('tested_on');
-            $table->unsignedBigInteger("value");
+            $table->bigInteger("value");
 
             $table->timestamps();
         });

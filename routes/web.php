@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\ArduinoController;
 use App\Http\Controllers\ParameterController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\DeviceTypeController;
 use App\Http\Controllers\UserController;
-use App\Models\Product;
+use App\Models\DeviceType;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -39,7 +39,7 @@ Route::get('/about', function () {
 
 Route::get('/store', function () {
 
-    $products = Product::with('parameters')->get();
+    $products = DeviceType::with('parameters')->get();
 
     return view('store')->with('products', $products);
 });
@@ -68,12 +68,12 @@ Route::middleware('admin')->group(function () {
 
     Route::get('/admin/dashboard', fn() => view('home'))->name('admin.dashboard');
 
-    Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-    Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
-    Route::post('/products/create', [ProductController::class, 'create']);
-    Route::get('/products/edit/{product}', [ProductController::class, 'read'])->name('products.edit');
-    Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
-    Route::delete('/products/delete/{product}', [ProductController::class, 'delete'])->name('products.delete');
+    Route::get('/products', [DeviceTypeController::class, 'index'])->name('products.index');
+    Route::get('/device_type/create', [DeviceTypeController::class, 'create'])->name('devicetype.create');
+    Route::post('/device_type/create', [DeviceTypeController::class, 'create'])->name('devicetype.create');
+    Route::get('/products/edit/{product}', [DeviceTypeController::class, 'read'])->name('products.edit');
+    Route::put('/products/{product}', [DeviceTypeController::class, 'update'])->name('products.update');
+    Route::delete('/products/delete/{product}', [DeviceTypeController::class, 'delete'])->name('products.delete');
 
     Route::get('/parameters', [ParameterController::class, 'index'])->name('parameters.index');
     Route::get('/parameters/create', [ParameterController::class, 'create'])->name('parameters.create');
