@@ -69,12 +69,12 @@
                                 <td class="date"><span class="score blue"
                                                        id="new-label">NEW</span>{{ ' ' . Carbon::parse($test->tested_on)->format('Y-m-d') }}
                                 </td>
-                                <td>Sénègal</td>
+                                <td>{{ $test->watersource->name }}</td>
                                 <td>
                                     <span class="score red">2/10</span>
                                 </td>
                                 <td>
-                                    <button id="{{ $test->id }}"><span>DETAILS</span></button>
+                                    <button class="details-btn" id="{{ $test->id }}"><span>DETAILS</span></button>
                                 </td>
                             </tr>
                         @endforeach
@@ -85,53 +85,39 @@
         </div>
     </div>
 </div>
-
 @foreach($tests as $test)
 <!-- The Modal -->
-<div id="{{ $test->id }}" class="modal">
-    @endforeach
+<div id="modal-{{ $test->id }}" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
         <div class="modal-header">
-            <h1>SENEGAL<br>DETAILS 16.11.2023</h1>
+            <h1>{{ $test->watersource->country }}<br>DETAILS {{ Carbon::parse($test->tested_on)->format('Y-m-d') }}</h1>
             <img src="../images/senegal-1.png">
             <div class="modal-close"><span class="close">&times;</span></div>
         </div>
         <div class="modal-body">
             <table class="table">
                 <thead>
-                <tr>
-                    <th>MEASUREMENT</th>
-                    <th>VALUE</th>
-                </tr>
+                    <tr>
+                        <th>MEASUREMENT</th>
+                        <th>VALUE</th>
+                        <th>TIME</th>
+                        <th>TYPE</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Temperature</td>
-                    <td>8°C</td>
-                </tr>
-                <tr>
-                    <td>pH</td>
-                    <td>7.5</td>
-                </tr>
-                <tr>
-                    <td>Waterflow</td>
-                    <td>0.5 m/s</td>
-                </tr>
-                <tr>
-                    <td>Zuurstof</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>TBC</td>
-                    <td>500 µS / cm</td>
-                </tr>
+                    <tr>
+                        <td>{{ $test->parameter->name }}</td>
+                        <td>{{ $test->value . ' ' . $test->parameter->measuring_unit }}</td>
+                        <td>{{ Carbon::parse($test->tested_on)->format('H:i') }}</td>
+                        <td>{{ $test->watersource->type }}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-
+@endforeach
 @include('components.footer')
 
 </body>
