@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AQUALITY | SIGN UP</title>
+    <title>AQUALITY | CHECK OUT</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Mako&display=swap" rel="stylesheet">
@@ -22,13 +22,28 @@
         </video>
         @include('components.nav')
     </div>
-    <div id="register">
+    <div id="checkout">
         <div class="big-card">
             <div class="big-card-title">
-                <h1>SIGN UP</h1>
-                <img src="{{ url('images/login.png') }}" alt="login image">
+                <h1>CHECK OUT</h1>
+                <img src="{{ url('images/store.png') }}" alt="store image">
             </div>
             <div id="content">
+                <div class="alert alert-info" role="alert">
+                    <i class="fa-solid fa-cart-shopping"></i> Please fill in your check out credentials correctly
+                </div>
+
+                <div class="checkout">
+
+                <div class="checkout-product">
+                    <h1>YOUR PRODUCT</h1>
+                    <h2>Product name</h2>
+                    <img src="./images/meter.png">
+                    <h1>TOTAL: €59,99</h1>
+                </div>
+
+
+
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
                     <div class="row g-2">
@@ -130,47 +145,21 @@
                         </div>
 
                         <div class="col-md">
-                            <div class="col-md">
-                                <div class="form-floating mb-3">
-                                    <select type="text" class="form-select" id="city" name="city">
-                                        <option selected>CITY</option>
-                                    </select>
-                                    <label for="country">Please select your city</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row g-2">
-                        <div class="col-md">
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="password" name="password" placeholder="5612 MA">
-                                <label for="password">PASSWORD</label>
-                                @error('password')
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </div>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="col-md">
-                            <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="confirmPassword" name="password_confirmation" placeholder="Eindhoven">
-                                <label for="confirmPassword">CONFIRM PASSWORD</label>
+                                <select type="text" class="form-select" id="city" name="city">
+                                    <option selected>CITY</option>
+                                </select>
+                                <label for="country">Please select your city</label>
                             </div>
                         </div>
                     </div>
 
-                    <button type="submit"><a><span>SIGN UP</span></a></button>
-                    <div class="register-here">
-                        <a href="{{ route('login') }}">Already have an account? Log in here!</a>
-                    </div>
+                    <button type="submit"><a><span>PROCEED</span></a></button>
                 </form>
+            </div>
             </div>
         </div>
     </div>
-
 
 @include('components.footer')
 

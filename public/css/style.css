@@ -341,7 +341,6 @@
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 2rem;
-    justify-content: center;
   }
   
   @media only screen and (max-width: 900px) {
@@ -363,7 +362,6 @@
   }
   
   #data-cards a {
-    display: block;
     height: 100%;
     width: 100%;
     text-decoration: none;
@@ -565,7 +563,12 @@
     }
   }
   
-  #about, #contact, #login, #register, #reset {
+  #about, 
+  #contact, 
+  #login, 
+  #register, 
+  #reset, 
+  #checkout {
     margin: 5rem auto;
     display: flex;
     justify-content: center;
@@ -680,7 +683,9 @@
     color: #fff;
   }
   
-  #contact button, #login button, #register button {
+  #contact button, 
+  #login button, 
+  #register button {
     display: block;
     border: none;
     border-radius: 0.625rem;
@@ -692,7 +697,9 @@
     text-align: center;
   }
   
-  #contact button a span, #login button a span, #register button a span {
+  #contact button a span, 
+  #login button a span, 
+  #register button a span {
     color: #fff;
     cursor: pointer;
     display: inline-block;
@@ -700,7 +707,9 @@
     transition: 0.5s;
   }
   
-  #contact button a span:after, #login button a span:after, #register button a span:after {
+  #contact button a span:after, 
+  #login button a span:after, 
+  #register button a span:after {
     content: ' >';
     position: absolute;
     opacity: 0;
@@ -709,11 +718,15 @@
     transition: 0.5s;
   }
   
-  #contact button:hover a span, #login button:hover a span, #register button:hover a span {
+  #contact button:hover a span, 
+  #login button:hover a span, 
+  #register button:hover a span {
     padding-right: 25px;
   }
   
-  #contact button:hover a span:after, #login button:hover a span:after, #register button:hover a span:after {
+  #contact button:hover a span:after, 
+  #login button:hover a span:after, 
+  #register button:hover a span:after {
     opacity: 1;
     right: 0;
   }
@@ -1157,7 +1170,7 @@
     justify-content: center;
   }
 
-  #store .big-card-title img {
+  #store .big-card-title img, #checkout .big-card-title img {
     object-position: 0 20%;
   }
 
@@ -1329,56 +1342,8 @@
   }
 
   @media only screen and (max-width: 900px) {
-    .product:not(:first-of-type) {
-      margin-top: 2rem;
-    }
-
-    .product {
-      justify-content: center;
-      grid-template-columns: 30% 40% 30%;
-      gap: 0;
-    }
-
-    .product-ls-img {
-      grid-row: 1 / span 2;
-      max-width: none;
-      max-height: 100%;
-    }
-  
-    .product-ls-img img {
-      width: 100%;
-      height: auto;
-      vertical-align: middle;
-    }
-
-    #info-btn {
-      display: none;
-    }
-
-    #buy-btn {
-      width: 80%;
-      
-    }
-
-    .product-ls-desc {
-      padding: 0;
-    }
-
-    .product-ls-desc p {
-      max-height: 4.8rem;
-      text-overflow: ellipsis;
-      overflow: hidden;
-    }
-
-    .product-ls-price {
-      justify-content: space-between;
-    
-    }
-  }
-
-  @media only screen and (max-width: 500px) {
     .product-list {
-      max-width: 90%;
+      max-width: 80%;
       width: 100%;
       height: 100%;
       margin: 3rem auto;
@@ -1387,12 +1352,15 @@
     .product {
       display: block;
       border-bottom: 1px solid #6B6B6B;
+      justify-content: center;
+    }
+
+    .product-ls-img {
+      margin: 0 auto;
     }
   
     .product-ls-img img {
-      width: auto;
-      height: 100%;
-      margin: 0 auto !important;
+      max-width: 100%;
     }
 
     #price-stock {
@@ -1481,8 +1449,6 @@
 
   .product-hero img {
     width: auto;
-    height: 100%;
-    max-height: 30rem;
     margin: 0 auto;
   }
 
@@ -1507,6 +1473,100 @@
     border-bottom: none;
   }
 
+  @media only screen and (max-width: 900px) {
+    .product-page {
+      max-width: 80%;
+      width: 100%;
+      height: 100%;
+      margin: 3rem auto;
+    }
+  
+    .product-hero {
+      justify-content: center;
+      grid-template-columns: 80%;
+    }
+
+    .product-hero img {
+      max-width: 100%;
+    }
+  }
+
   #admin-p {
     margin: 2rem;
+  }
+
+  #product-specs tbody tr td:last-of-type {
+    text-align: right;
+  }
+
+  .checkout-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    text-align: center;
+    
+    margin-bottom: 5rem;
+  }
+
+  .checkout-product h1 {
+    font-family: Koulen, sans-serif;
+    font-size: 2rem;
+  }
+
+  .checkout-product h2 {
+    font-size: 1.5rem;
+  }
+
+  .checkout-product img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .checkout {
+    display: grid;
+    grid-template-columns: 30% 70%;
+  }
+
+  .checkout form {
+    padding-top: 3rem;
+  }
+
+  #checkout button {
+    display: block;
+    border: none;
+    border-radius: 0.625rem;
+    background: var(--blue-color);
+    width: 12.5rem;
+    margin: 2.7rem 0;
+    
+    font-family: Koulen, sans-serif;
+    font-size: 2.25rem;
+    text-align: center;
+  }
+  
+  #checkout button a span {
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  #checkout button a span:after{
+    content: ' >';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  #checkout button:hover a span {
+    padding-right: 25px;
+  }
+   
+  #checkout button:hover a span:after {
+    opacity: 1;
+    right: 0;
   }

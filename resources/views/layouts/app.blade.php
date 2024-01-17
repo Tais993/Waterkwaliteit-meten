@@ -67,21 +67,19 @@
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
                                     <a class="dropdown-item" href="{{ route('users.index') }}">
-                                        {{ __('Users') }}
+                                        <i class="fa-solid fa-user"></i> {{ __('Users') }}
                                     </a>
 
                                     <a class="dropdown-item" href="{{ route('products.index') }}">
-                                        {{ __('Products') }}
+                                        <i class="fa-solid fa-cart-shopping"></i> {{ __('Products') }}
                                     </a>
 
                                     <a class="dropdown-item" href="{{ route('parameters.index') }}">
-                                        {{ __('Parameters') }}
+                                        <i class="fa-solid fa-sliders"></i> {{ __('Parameters') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <i class="fa-solid fa-right-from-bracket"></i> {{ __('Log out') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
