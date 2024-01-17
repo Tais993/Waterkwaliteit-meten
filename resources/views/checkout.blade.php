@@ -25,7 +25,7 @@
     <div id="checkout">
         <div class="big-card">
             <div class="big-card-title">
-                <h1>CHECK OUT</h1>
+                <h1>CHECKOUT</h1>
                 <img src="{{ url('images/store.png') }}" alt="store image">
             </div>
             <div id="content">
