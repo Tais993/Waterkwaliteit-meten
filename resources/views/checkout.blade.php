@@ -30,7 +30,7 @@
             </div>
             <div id="content">
                 <div class="alert alert-info" role="alert">
-                    <i class="fa-solid fa-cart-shopping"></i> Please fill in your checkout credentials correctly
+                    <i class="fa-solid fa-cart-shopping"></i> Please fill out your checkout credentials correctly.
                 </div>
 
                 <div class="checkout">
