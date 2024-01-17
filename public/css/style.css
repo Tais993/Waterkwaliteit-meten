@@ -341,7 +341,6 @@
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 2rem;
-    justify-content: center;
   }
   
   @media only screen and (max-width: 900px) {
@@ -363,7 +362,6 @@
   }
   
   #data-cards a {
-    display: block;
     height: 100%;
     width: 100%;
     text-decoration: none;
@@ -1541,7 +1539,7 @@
     background: var(--blue-color);
     width: 12.5rem;
     margin: 2.7rem 0;
-    margin-left: auto;
+    
     font-family: Koulen, sans-serif;
     font-size: 2.25rem;
     text-align: center;
