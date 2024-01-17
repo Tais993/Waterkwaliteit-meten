@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AQUALITY | CHECK OUT</title>
+    <title>AQUALITY | CHECKOUT</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Mako&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
             </div>
             <div id="content">
                 <div class="alert alert-info" role="alert">
-                    <i class="fa-solid fa-cart-shopping"></i> Please fill in your check out credentials correctly
+                    <i class="fa-solid fa-cart-shopping"></i> Please fill in your checkout credentials correctly
                 </div>
 
                 <div class="checkout">

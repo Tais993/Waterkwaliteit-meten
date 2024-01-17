@@ -1538,7 +1538,7 @@
     border-radius: 0.625rem;
     background: var(--blue-color);
     width: 12.5rem;
-    margin: 2.7rem 0;
+    margin: 2rem 0 2rem auto;
     
     font-family: Koulen, sans-serif;
     font-size: 2.25rem;
