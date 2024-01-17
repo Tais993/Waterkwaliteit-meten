@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArduinoController;
+use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\ParameterController;
 use App\Http\Controllers\DeviceTypeController;
 use App\Http\Controllers\UserController;
@@ -93,4 +94,10 @@ Route::middleware('admin')->group(function () {
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users/delete/{user}', [UserController::class, 'delete'])->name('users.delete');
 
+    Route::get('/devices', [DeviceController::class, 'index'])->name('devices.index');
+    Route::get('/devices/create', [DeviceController::class, 'create'])->name('devices.create');
+    Route::post('/devices/create', [DeviceController::class, 'create'])->name('devices.create');
+    Route::get('/devices/edit/{device}', [DeviceController::class, 'read'])->name('devices.edit');
+    Route::put('/devices/{device}', [DeviceController::class, 'update'])->name('devices.update');
+    Route::delete('/devices/delete/{device}', [DeviceController::class, 'delete'])->name('devices.delete');
 });

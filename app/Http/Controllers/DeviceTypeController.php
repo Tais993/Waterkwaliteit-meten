@@ -44,6 +44,7 @@ class DeviceTypeController extends Controller
             ]);
 
             $product->parameters()->attach($validatedData['parameters']);
+
             return redirect()->route('products.index')->with('success', 'Device type created successfully!');
         } else {
             return redirect()->route('devicetype.create')->with('failure', 'Device type not created, try again!');

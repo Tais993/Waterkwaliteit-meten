@@ -1,5 +1,5 @@
 @php
-    $fields = ['naam', 'meetEenheid']; // List of fields you want to display errors for
+    $fields = ['name', 'measuring_unit']; // List of fields you want to display errors for
 @endphp
 
 @extends('layouts.app')

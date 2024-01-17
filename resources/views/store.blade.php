@@ -37,35 +37,30 @@
                             <img src="./images/meter.png">
                         </div>
                         <div class="product-ls-desc">
-                            <h2>{{ $product->naam . ' ' . $product->type }}</h2>
+                            <h2>{{ $product->name }}</h2>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat.
+                                {{ $product->description }}
                             </p>
                         </div>
                         <div class="product-ls-price">
                             <div id="price-stock">
-                                <h2>€59,99</h2>
+                                <h2>{{ '€' . $product->price }}</h2>
                                 <div class="stock">
-                                    @if($product->voorraad > 5)
+                                    @if($product->stock > 5)
                                         <div class="stock-status-instock"></div>
                                         IN STOCK
-                                    @elseif($product->voorraad == 0)
+                                    @elseif($product->stock == 0)
                                         <div class="stock-status-soldout"></div>
                                         SOLD OUT
                                     @else
                                         <div class="stock-status-almostsoldout"></div>
                                         LAST ITEMS
-                                    @endif  
+                                    @endif
                                 </div>
                             </div>
                             <div id="buttons">
                                 <button id="info-btn" type="button"><a href="#"><span>INFO</span></a></button>
-                                @if($product->voorraad > 0)
+                                @if($product->stock > 0)
                                     <button id="buy-btn" type="button"><a href="#"><span>BUY</span></a></button>
                                 @endif
                             </div>
