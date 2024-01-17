@@ -5,6 +5,7 @@ use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\ParameterController;
 use App\Http\Controllers\DeviceTypeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WatersourceController;
 use App\Models\DeviceType;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -67,7 +68,7 @@ Route::middleware('auth')->group(function() {
 
 });
 
-Route::get('/landen/senegal', [ArduinoController::class, 'getMeasuredData']);
+Route::get('/landen/{country}', [WatersourceController::class, 'getTestData']);
 
 Route::middleware('admin')->group(function () {
 
