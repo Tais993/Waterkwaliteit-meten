@@ -68,22 +68,23 @@
                           </tr>
                           </thead>
                           <tbody>
-                          @foreach($tests as $test)
-                              <tr class="table-primary" id="{{ $test->id }}">
-                                  <td class="date"><span class="score blue"
-                                                         id="new-label">NEW</span>{{ ' ' . Carbon::parse($test->tested_on)->format('Y-m-d') }}
-                                  </td>
-                                  <td>{{ $test->watersource->name }}</td>
-                                  <td>
-                                      <span class="score red">2/10</span>
-                                  </td>
-                                  <td>
-                                      <button class="details-btn" id="{{ $test->id }}"><span>DETAILS</span></button>
-                                  </td>
-                              </tr>
-                          @endforeach
+                              @foreach($tests as $key => $test)
+                                  <tr class="{{ $key === 0 ? 'table-primary' : '' }}" id="{{ $test->id }}">
+                                      <td class="date">
+                                          {!! $key === 0 ? "<span class='score blue'>NEW</span>" : '' !!}
+                                          {{ ' ' . Carbon::parse($test->tested_on)->format('Y-m-d') }}
+                                      </td>
+                                      <td>{{ $test->watersource->name }}</td>
+                                      <td>
+                                          {!! generateScoreHtml($test->value) !!}
+                                      </td>
+                                      <td>
+                                          <button class="details-btn" id="{{ $test->id }}"><span>DETAILS</span></button>
+                                      </td>
+                                  </tr>
+                              @endforeach
                           </tbody>
-                    </table>
+                      </table>
                   </div>
                 </div>
             </div>
@@ -122,6 +123,33 @@
             </div>
         </div>
     @endforeach
+
+    @php
+    function generateScoreHtml($value) {
+        $score = calculateScore($value);
+        $color = getColorBasedOnScore($score);
+        return "<span class='score $color'>$score/10</span>";
+    }
+
+    function calculateScore($value) {
+        // Map the value from 0 to 15 to a score out of 10
+        return round(($value / 15) * 10);
+    }
+
+    function getColorBasedOnScore($score) {
+        if ($score >= 9) {
+            return 'blue';
+        } elseif ($score >= 7) {
+            return 'green';
+        } elseif ($score >= 5) {
+            return 'yellow';
+        } elseif ($score >= 3) {
+            return 'orange';
+        } else {
+            return 'red';
+        }
+    }
+@endphp
 
     @include('components.footer')
 
