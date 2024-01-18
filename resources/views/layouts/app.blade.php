@@ -108,6 +108,9 @@
     @if(isset($user))
         const userCountry = "{{ $user->country }}";
         const userCity = "{{ $user->city }}";
+    @else
+        const userCountry = null;
+        const userCity = null;
     @endif
 
     if (selectCountry) {

@@ -22,13 +22,13 @@ class ParameterController extends Controller
             try {
                 // Validation and parameter creation logic here...
                 $validatedData = $request->validate([
-                    'naam' => 'required|string',
-                    'meetEenheid' => 'required|string'
+                    'name' => 'required|string',
+                    'measuring_unit' => 'required|string'
                 ]);
 
                 Parameter::create([
-                    'name' => $validatedData['naam'],
-                    'measuring_unit' => $validatedData['meetEenheid'],
+                    'name' => $validatedData['name'],
+                    'measuring_unit' => $validatedData['measuring_unit'],
                 ]);
 
                 return redirect()->route('parameters.index')->with('success', 'Parameter created successfully!');

@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Parameter;
-use App\Models\Product;
+use App\Models\DeviceType;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class DeviceTypeController extends Controller
 {
     /**
      * @param Request $request
@@ -27,23 +27,27 @@ class ProductController extends Controller
             // Validation and product creation logic here...
             // Assuming parameters are submitted as an array of IDs
             $validatedData = $request->validate([
-                'naam' => 'required|string',
-                'type' => 'required|string',
-                'voorraad' => 'required|integer',
+                'name' => 'required|string',
+                'price' => 'required|string',
+                'stock' => 'required|integer',
+                'description' => 'required|string',
+                'image' => 'nullable|string',
                 'parameters' => 'required|array'
             ]);
 
-            $product = Product::create([
-                'naam' => $validatedData['naam'],
-                'type' => $validatedData['type'],
-                'voorraad' => $validatedData['voorraad']
+            $product = DeviceType::create([
+                'name' => $validatedData['name'],
+                'price' => $validatedData['price'],
+                'stock' => $validatedData['stock'],
+                'description' => $validatedData['description'],
+                'image' => $validatedData['image']
             ]);
 
             $product->parameters()->attach($validatedData['parameters']);
 
-            return redirect()->route('products.index')->with('success', 'Product created successfully!');
+            return redirect()->route('products.index')->with('success', 'Device type created successfully!');
         } else {
-            return redirect()->route('products.create')->with('failure', 'Product not created try again!');
+            return redirect()->route('devicetype.create')->with('failure', 'Device type not created, try again!');
         }
     }
 
@@ -53,7 +57,7 @@ class ProductController extends Controller
      */
     public function read($id): RedirectResponse|View
     {
-        $product = Product::with('parameters')->find($id);
+        $product = DeviceType::with('parameters')->find($id);
         $parameters = Parameter::all();
         if (!$product) {
             return redirect()->route('products.index')->with('failure', 'Product not found!');
@@ -69,14 +73,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id): RedirectResponse
     {
-        $product = Product::find($id);
+        $product = DeviceType::find($id);
 
         if (!$product) {
             return redirect()->route('products.index')->with('failure', 'Product not found!');
         }
 
         // Update product attributes
-        $product->update($request->only(['naam', 'type', 'voorraad']));
+        $product->update($request->all());
 
         // Update product parameters
         $parameters = $request->input('parameters', []);
@@ -91,7 +95,7 @@ class ProductController extends Controller
      */
     public function delete($id): RedirectResponse
     {
-        $product = Product::find($id);
+        $product = DeviceType::find($id);
 
         if (!$product) {
             return redirect()->route('products.index')->with('failure', 'Product not found!');
@@ -109,13 +113,13 @@ class ProductController extends Controller
     public function index(): View
     {
         // Load products with their associated parameters
-        $products = Product::with('parameters')->get();
+        $products = DeviceType::with('parameters')->get();
 
         return view('products.index', compact('products'));
     }
 
     public function apiIndex(): Collection|array
     {
-        return Product::with('parameters')->get();
+        return DeviceType::with('parameters')->get();
     }
 }

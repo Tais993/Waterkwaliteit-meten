@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('deviceType_parameter', function (Blueprint $table) {
+        Schema::create('device_type_parameter', function (Blueprint $table) {
             $table->id();
 
             $table->foreignId("parameter_id")->constrained("parameters");
-            $table->foreignId("deviceType_id")->constrained("deviceTypes");
+            $table->foreignId("device_type_id")->constrained("device_types");
 
             $table->timestamps();
         });

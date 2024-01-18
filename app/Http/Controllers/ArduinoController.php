@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -27,20 +26,5 @@ class ArduinoController extends Controller
         } else {
             return response()->json(['message' => 'tabel bestaat niet'], 400);
         }
-    }
-
-    public function getMeasuredData(): View
-    {
-        $latestMeasurement = DB::table('resultaten')
-            ->orderBy('created_at', 'desc')
-            ->first('waarde');
-
-        if($latestMeasurement == null) {
-            return view('countries/senegal');
-        }
-
-        $pHValue = $latestMeasurement->waarde;
-
-        return view('countries/senegal', ['pHValue' => $pHValue]);
     }
 }

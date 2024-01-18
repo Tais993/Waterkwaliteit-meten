@@ -96,12 +96,13 @@
             <div class="row">
                 <div class="col-9 mb-3">
                     <label for="city" class="form-label">City:</label>
-                    <input type="text" class="form-control @error('city') is-invalid @enderror" required name="city" autocomplete="address-level2" id="city">
+                    <select type="text" class="form-select @error('city') is-invalid @enderror" required name="city" autocomplete="address-level2" id="city">
                     @error('city')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
+                    </select>
                 </div>
 
                 <div class="col-3 mb-3">

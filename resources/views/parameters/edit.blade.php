@@ -21,13 +21,13 @@
             @csrf
             @method('PUT')
             <div class="mb-3">
-                <label for="naam" class="form-label">Name:</label>
-                <input type="text" class="form-control" name="naam" required id="naam" value="{{ $parameter->name }}">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control" name="name" required id="name" value="{{ $parameter->name }}">
             </div>
 
             <div class="mb-3">
-                <label for="type" class="form-label">Measuring unit:</label>
-                <input type="text" class="form-control" required name="meetEenheid" id="type" value="{{ $parameter->measuring_unit }}">
+                <label for="measuring_unit" class="form-label">Measuring unit:</label>
+                <input type="text" class="form-control" required name="measuring_unit" id="measuring_unit" value="{{ $parameter->measuring_unit }}">
             </div>
 
             <button type="submit" class="btn btn-primary">Edit Parameter</button>

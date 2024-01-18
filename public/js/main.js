@@ -31,25 +31,42 @@ function display() {
     }
 }
 
-let modal = document.getElementById("sen-161123-modal");
-let btn = document.getElementById("sen-161123-btn");
-let tr = document.getElementById("sen-161123-tr")
+// Get all elements with class "details-btn" (assuming you use this class for your buttons)
+let buttons = document.querySelectorAll(".details-btn");
+
+// Set up event listeners for each button
+buttons.forEach(function (button) {
+    button.onclick = function () {
+        // Get the modal ID from the button's ID
+        let modalId = button.id;
+
+        // Get the corresponding modal element
+        let modal = document.getElementById('modal-' + modalId);
+
+        // Open the modal
+        if (modal) {
+            modal.style.display = "block";
+        }
+    }
+});
+
+// Set up event listener for the close button
 let span = document.getElementsByClassName("close")[0];
-
-tr.onclick = function() {
-  modal.style.display = "block";
+span.onclick = function () {
+    closeModals();
 }
 
-btn.onclick = function() {
-  modal.style.display = "block";
+// Set up event listener to close the modal when clicking outside it
+window.onclick = function (event) {
+    if (event.target.classList.contains("modal")) {
+        closeModals();
+    }
 }
 
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+// Function to close all modals
+function closeModals() {
+    let modals = document.querySelectorAll(".modal");
+    modals.forEach(function (modal) {
+        modal.style.display = "none";
+    });
 }

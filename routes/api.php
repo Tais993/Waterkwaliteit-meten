@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\DeviceTypeController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,12 +28,15 @@ Route::controller(ArduinoController::class)->group(function () {
     Route::post('/waterkwaliteit', 'store');
 });
 
-Route::post('/products/create', [ProductController::class, 'create']);
-Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
-Route::get('/products', [ProductController::class, 'apiIndex'])->name('products.index');
+Route::post('/products/create', [DeviceTypeController::class, 'create']);
+Route::get('/products/create', [DeviceTypeController::class, 'create'])->name('products.create');
+Route::get('/products', [DeviceTypeController::class, 'apiIndex'])->name('products.index');
 
-Route::post('/create', [UserController::class, 'create']);
+Route::middleware('auth:sanctum')->get('/devices/fetch/{id}', [DeviceController::class, 'apiFetch']);
+Route::middleware('auth:sanctum')->get('/tests/fetch/{id}', [TestController::class, 'apiFetch']);
 
-Route::post('/login', [loginController::class, 'ApiLogin']);
 Route::middleware('auth:sanctum')->get('/user', [UserController::class, 'show']);
 Route::middleware('auth:sanctum')->post('/checkAuth', [loginController::class, 'checkAuth']);
+
+Route::post('/create', [UserController::class, 'create']);
+Route::post('/login', [loginController::class, 'ApiLogin']);

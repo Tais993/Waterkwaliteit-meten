@@ -1,5 +1,5 @@
 @php
-    $fields = ['naam', 'meetEenheid']; // List of fields you want to display errors for
+    $fields = ['name', 'measuring_unit']; // List of fields you want to display errors for
 @endphp
 
 @extends('layouts.app')
@@ -28,14 +28,14 @@
         <form action="{{ route('parameters.create') }}" method="POST" class="mt-4 w-50 m-auto">
             @csrf
             <div class="mb-3">
-                <label for="naam" class="form-label">Name:</label>
-                <input type="text" class="form-control" name="naam" required id="naam">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control" name="name" required id="name">
 
             </div>
 
             <div class="mb-3">
-                <label for="voorraad" class="form-label">meet eenheid:</label>
-                <input type="text" class="form-control" name="meetEenheid" required id="voorraad">
+                <label for="measuring_unit" class="form-label">meet eenheid:</label>
+                <input type="text" class="form-control" name="measuring_unit" required id="measuring_unit">
             </div>
 
 
