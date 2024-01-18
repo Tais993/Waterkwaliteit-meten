@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Watersource;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class WatersourceController extends Controller
