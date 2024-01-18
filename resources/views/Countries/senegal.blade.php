@@ -1,5 +1,5 @@
 @php use Carbon\Carbon; @endphp
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -85,6 +85,7 @@
         </div>
     </div>
 </div>
+
 @foreach($tests as $test)
 <!-- The Modal -->
 <div id="modal-{{ $test->id }}" class="modal">
