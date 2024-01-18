@@ -25,7 +25,7 @@ class TestFactory extends Factory
             'device_id' => Device::pluck('id')->random(),
             'parameter_id' => Parameter::pluck('id')->random(),
             'value' => rand(0, 15),
-            'tested_on' => Carbon::now()->subMonths(rand(0, 2))->timezone(config('app.timezone')),
+            'tested_on' => Carbon::now()->subMonths(rand(0, 2))->day(rand(1, 28)),
         ];
     }
 }

@@ -1,3 +1,5 @@
+@php use Carbon\Carbon; @endphp
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,17 +40,17 @@
                   </div>
                     <div class="text">
                         <p>
-                          In Laos, amidst enchanting landscapes, AQUALITY 
-                          is dedicated to measuring and improving water quality. 
-                          Whether in urban centers or remote areas, our measurement 
-                          equipment accurately analyzes water quality, taking 
-                          into consideration local variables such as human 
-                          activities and geographical features. Our close 
-                          collaboration with local communities and government 
-                          partners is vital to addressing the specific challenges 
-                          of each region. Through awareness-raising, we aim not 
-                          only for clean water sources but also for resilient 
-                          communities actively contributing to sustainable water 
+                          In Laos, amidst enchanting landscapes, AQUALITY
+                          is dedicated to measuring and improving water quality.
+                          Whether in urban centers or remote areas, our measurement
+                          equipment accurately analyzes water quality, taking
+                          into consideration local variables such as human
+                          activities and geographical features. Our close
+                          collaboration with local communities and government
+                          partners is vital to addressing the specific challenges
+                          of each region. Through awareness-raising, we aim not
+                          only for clean water sources but also for resilient
+                          communities actively contributing to sustainable water
                           management. Explore the measurements taken in Laos below.
                         </p>
                     </div>
@@ -57,78 +59,71 @@
                     <h2>MEASUREMENTS</h2>
                     <div class="table-wrapper">
                       <table class="table">
-                        <thead>
+                          <thead>
                           <tr>
-                            <th scope="col">DATE</th>
-                            <th scope="col">SOURCE</th>
-                            <th scope="col">SCORE</th>
-                            <th scope="col">DETAILS</th>
+                              <th>DATE</th>
+                              <th>SOURCE</th>
+                              <th>SCORE</th>
+                              <th>DETAILS</th>
                           </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="table-primary">
-                            <th scope="row"><span class="score blue" id="new-label">NEW</span> 16.11.2023</th>
-                            <td>Mekong</td>
-                            <td><span class="score red">2/10</span></td>
-                            <td><button id="sen-161123-btn"><span>DETAILS</span></button></td>
-                          </tr>
-                          <tr>
-                            <th scope="row">15.11.2023</th>
-                            <td>Nam Ou</td>
-                            <td><span class="score orange">4/10</span></td>
-                            <td><button><span>DETAILS</span></button></td>
-                          </tr>
-                          <tr>
-                            <th scope="row">14.11.2023</th>
-                            <td>Mekong</td>
-                            <td><span class="score yellow">6/10</span></td>
-                            <td><button><span>DETAILS</span></button></td>
-                          </tr>
-                          <tr>
-                            <th scope="row">13.11.2023</th>
-                            <td>Nam Ou</td>
-                            <td><span class="score green">8/10</span></td>
-                            <td><button><span>DETAILS</span></button></td>
-                          </tr>
-                          <tr>
-                            <th scope="row">12.11.2023</th>
-                            <td>Mekong</td>
-                            <td><span class="score blue">10/10</span></td>
-                            <td><button><span>DETAILS</span></button></td>
-                          </tr>
-                          <tr>
-                            <th scope="row">11.11.2023</th>
-                            <td>Nam Ou</td>
-                            <td><span class="score green">7/10</span></td>
-                            <td><button><span>DETAILS</span></button></td>
-                          </tr>
-                          <tr>
-                            <th scope="row">10.11.2023</th>
-                            <td>Mekong</td>
-                            <td><span class="score yellow">5/10</span></td>
-                            <td><button><span>DETAILS</span></button></td>
-                          </tr>
-                          <tr>
-                            <th scope="row">09.11.2023</th>
-                            <td>Nam Ou</td>
-                            <td><span class="score orange">3/10</span></td>
-                            <td><button><span>DETAILS</span></button></td>
-                          </tr>
-                          <tr>
-                            <th scope="row">08.11.2023</th>
-                            <td>Mekong</td>
-                            <td><span class="score red">1/10</span></td>
-                            <td><button><span>DETAILS</span></button></td>
-                          </tr>
-                        </tbody>
+                          </thead>
+                          <tbody>
+                          @foreach($tests as $test)
+                              <tr class="table-primary" id="{{ $test->id }}">
+                                  <td class="date"><span class="score blue"
+                                                         id="new-label">NEW</span>{{ ' ' . Carbon::parse($test->tested_on)->format('Y-m-d') }}
+                                  </td>
+                                  <td>{{ $test->watersource->name }}</td>
+                                  <td>
+                                      <span class="score red">2/10</span>
+                                  </td>
+                                  <td>
+                                      <button class="details-btn" id="{{ $test->id }}"><span>DETAILS</span></button>
+                                  </td>
+                              </tr>
+                          @endforeach
+                          </tbody>
                     </table>
                   </div>
                 </div>
             </div>
         </div>
       </div>
+    @foreach($tests as $test)
+        <!-- The Modal -->
+        <div id="modal-{{ $test->id }}" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1>{{ $test->watersource->country }}<br>DETAILS {{ Carbon::parse($test->tested_on)->format('Y-m-d') }}</h1>
+                    <img src="../images/laos-1.png">
+                    <div class="modal-close"><span class="close">&times;</span></div>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>MEASUREMENT</th>
+                            <th>VALUE</th>
+                            <th>TIME</th>
+                            <th>TYPE</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>{{ $test->parameter->name }}</td>
+                            <td>{{ $test->value . ' ' . $test->parameter->measuring_unit }}</td>
+                            <td>{{ Carbon::parse($test->tested_on)->format('H:i') }}</td>
+                            <td>{{ $test->watersource->type }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    @endforeach
 
-      @include('components.footer')
+    @include('components.footer')
 
 </body>
 </html>
