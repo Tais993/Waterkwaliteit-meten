@@ -49,7 +49,6 @@
       </div>
 
     <div id="data-cards">
-      <!-- <a href="./countries/senegal.html" -->
         <div class="data-card">
           <h2>SENEGAL</h2>
           <div class="data-img">
@@ -57,8 +56,6 @@
           </div>
           <button type="button"><a href="/landen/senegal"><span>MORE INFO</span></a></button>
         </div>
-      <!-- </a>
-      <a href="./countries/haiti.html"> -->
         <div class="data-card">
           <h2>HAITI</h2>
           <div class="data-img">
@@ -66,8 +63,6 @@
           </div>
           <button type="button"><a href="/landen/haiti"><span>MORE INFO</span></a></button>
         </div>
-      <!-- </a>
-      <a href="./countries/laos.html"> -->
         <div class="data-card">
           <h2>LAOS</h2>
           <div class="data-img">
@@ -75,7 +70,6 @@
           </div>
           <button type="button"><a href="/landen/laos"><span>MORE INFO</span></a></button>
         </div>
-      <!-- </a> -->
     </div>
 
     <div id="info-cards">
