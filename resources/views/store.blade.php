@@ -28,7 +28,7 @@
         <div class="big-card">
           <div class="big-card-title">
             <h1>STORE</h1>
-            <img src="./images/store.png">
+            <img src="{{ asset('images/store.png') }}">
           </div>
             <div class="product-list">
                 @foreach($products as $product)
@@ -59,9 +59,9 @@
                                 </div>
                             </div>
                             <div id="buttons">
-                                <button id="info-btn" type="button"><a href="#"><span>INFO</span></a></button>
+                                <button id="info-btn" type="button"><a href="{{ route('product.page', $product->id) }}"><span>INFO</span></a></button>
                                 @if($product->stock > 0)
-                                    <button id="buy-btn" type="button"><a href="#"><span>BUY</span></a></button>
+                                    <button id="buy-btn" type="button"><a href="{{ route('product.checkout', $product->id) }}"><span>BUY</span></a></button>
                                 @endif
                             </div>
                         </div>

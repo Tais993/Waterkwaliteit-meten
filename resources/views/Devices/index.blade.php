@@ -25,7 +25,7 @@
 
                         <div class="d-flex justify-content-between">
                             <h2>All Devices</h2>
-                            <a href="{{ route('devices.create') }}" class="btn btn-primary">ADD</a>
+                            <button class="btn btn-primary" type="button"><a class="dropdown-item" href="{{ route('devices.create') }}"><i class="fa-solid fa-plus" style="color: #ffffff;"></i> ADD</a></button>
                         </div>
 
                         <table class="table">

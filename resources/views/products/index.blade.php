@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Products') }}</div>
+                    <div class="card-header">{{ __('Product Types') }}</div>
 
                     <div class="card-body">
                         @if (session('success'))
@@ -22,8 +22,8 @@
                         @endif
 
                             <div class="d-flex justify-content-between">
-                                <h2>All Products</h2>
-                                <a href="{{ route('devicetype.create') }}" class="btn btn-primary">ADD</a>
+                                <h2>All product types</h2>
+                                <button class="btn btn-primary" type="button"><a class="dropdown-item" href="{{ route('products.create') }}"><i class="fa-solid fa-plus" style="color: #ffffff;"></i> ADD</a></button>
                             </div>
 
                             <table class="table">

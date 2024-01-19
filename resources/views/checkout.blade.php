@@ -18,7 +18,7 @@
 <body>
     <div id="hero">
         <video autoplay playsinline muted loop class="bg-vid-sm">
-            <source src="./images/bg.mp4" type="video/mp4">
+            <source src="{{ asset('images/bg.mp4') }}" type="video/mp4">
         </video>
         @include('components.nav')
     </div>
@@ -26,20 +26,20 @@
         <div class="big-card">
             <div class="big-card-title">
                 <h1>CHECKOUT</h1>
-                <img src="{{ url('images/store.png') }}" alt="store image">
+                <img src="{{ asset('images/store.png') }}" alt="store image">
             </div>
             <div id="content">
                 <div class="alert alert-info" role="alert">
-                    <i class="fa-solid fa-cart-shopping"></i> Please fill in your check out credentials correctly
+                    <i class="fa-solid fa-cart-shopping"></i> Please fill out your check out credentials correctly
                 </div>
 
                 <div class="checkout">
 
                 <div class="checkout-product">
                     <h1>YOUR PRODUCT</h1>
-                    <h2>Product name</h2>
-                    <img src="./images/meter.png">
-                    <h1>TOTAL: €59,99</h1>
+                    <h2>{{ $product->name }}</h2>
+                    <img src="{{ asset('images/meter.png') }}">
+                    <h1>TOTAL: € {{ $product->price }}</h1>
                 </div>
 
 
@@ -149,7 +149,7 @@
                                 <select type="text" class="form-select" id="city" name="city">
                                     <option selected>CITY</option>
                                 </select>
-                                <label for="country">Please select your city</label>
+                                <label for="city">Please select your city</label>
                             </div>
                         </div>
                     </div>

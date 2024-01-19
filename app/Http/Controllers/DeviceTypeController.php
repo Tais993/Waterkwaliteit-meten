@@ -67,6 +67,36 @@ class DeviceTypeController extends Controller
     }
 
     /**
+     * @param $id
+     * @return RedirectResponse|View
+     */
+    public function readStore($id): RedirectResponse|View
+    {
+        $product = DeviceType::with('parameters')->find($id);
+
+        if (!$product) {
+            return redirect()->route('products.index')->with('failure', 'Product not found!');
+        }
+
+        return view('product', compact('product'));
+    }
+
+    /**
+     * @param $id
+     * @return RedirectResponse|View
+     */
+    public function checkOut($id): RedirectResponse|View
+    {
+        $product = DeviceType::find($id);
+
+        if (!$product) {
+            return redirect()->route('products.index')->with('failure', 'Product not found!');
+        }
+
+        return view('checkout', compact('product'));
+    }
+
+    /**
      * @param Request $request
      * @param $id
      * @return RedirectResponse

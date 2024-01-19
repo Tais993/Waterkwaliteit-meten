@@ -19,7 +19,7 @@
 <body>
 <div id="hero">
     <video autoplay playsinline muted loop class="bg-vid-sm">
-        <source src="../images/bg.mp4" type="video/mp4">
+        <source src="{{ asset('images/bg.mp4') }}" type="video/mp4">
     </video>
 
     @include('components.nav')
@@ -28,13 +28,13 @@
     <div class="country-card">
         <div class="country-card-title">
             <h1>SENEGAL</h1>
-            <img src="../images/senegal-1.png">
+            <img src="{{ asset('images/senegal-1.png') }}">
         </div>
         <div id="content">
             <div class="country-info">
                 <div class="general-score">
                     <h1>SCORE</h1>
-                    <img src="../images/3.png">
+                    <img src="{{ asset('images/3.png') }}">
                 </div>
                 <div class="text">
                     <p>
@@ -93,7 +93,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <h1>{{ $test->watersource->country }}<br>DETAILS {{ Carbon::parse($test->tested_on)->format('Y-m-d') }}</h1>
-            <img src="../images/senegal-1.png">
+            <img src="{{ asset('images/senegal-1.png') }}">
             <div class="modal-close"><span class="close">&times;</span></div>
         </div>
         <div class="modal-body">
@@ -121,18 +121,21 @@
 @endforeach
 
 @php
-    function generateScoreHtml($value) {
+    function generateScoreHtml($value): string
+     {
         $score = calculateScore($value);
         $color = getColorBasedOnScore($score);
         return "<span class='score $color'>$score/10</span>";
     }
 
-    function calculateScore($value) {
+    function calculateScore($value): int
+    {
         // Map the value from 0 to 15 to a score out of 10
         return round(($value / 15) * 10);
     }
 
-    function getColorBasedOnScore($score) {
+    function getColorBasedOnScore($score): string
+    {
         if ($score >= 9) {
             return 'blue';
         } elseif ($score >= 7) {

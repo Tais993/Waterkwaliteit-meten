@@ -31,9 +31,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/product', function () {
-    return view('product');
-});
+Route::get('/device/info/{id}', [DeviceTypeController::class, 'readStore'])->name('product.page');
+Route::get('/device/checkout/{id}', [DeviceTypeController::class, 'checkOut'])->name('product.checkout');
 
 Route::get('/about', function () {
     return view('about');

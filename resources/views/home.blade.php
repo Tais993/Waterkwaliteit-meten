@@ -10,9 +10,9 @@
 
                             <div class="d-grid gap-2 col-6 mx-auto" id="admin-p">
                                 <button class="btn btn-secondary" type="button"><a class="dropdown-item" href="{{ route('users.index') }}"><i class="fa-solid fa-user" style="color: #fff;"></i> Users</a></button>
-                                <button class="btn btn-secondary" type="button"><a class="dropdown-item" href="{{ route('products.index') }}"><i class="fa-solid fa-cart-shopping" style="color: #fff;"></i> Products</a></button>
+                                <button class="btn btn-secondary" type="button"><a class="dropdown-item" href="{{ route('products.index') }}"><i class="fa-solid fa-cart-shopping" style="color: #fff;"></i> Product Types</a></button>
+                                <button class="btn btn-secondary" type="button"><a class="dropdown-item" href="{{ route('devices.index') }}"><i class="fa-solid fa-hard-drive" style="color: #fff;"></i> Devices</a></button>
                                 <button class="btn btn-secondary" type="button"><a class="dropdown-item" href="{{ route('parameters.index') }}"><i class="fa-solid fa-sliders" style="color: #fff;"></i> Parameters</a></button>
-                                <button class="btn btn-secondary" type="button"><a class="dropdown-item" href="{{ route('devices.index') }}"><i class="fa-solid fa-sliders" style="color: #fff;"></i> Devices</a></button>
                                 <button class="btn btn-danger" type="button">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();

@@ -66,12 +66,20 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
+                                    <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
+                                        <i class="fa-solid fa-house"></i> {{ __('Home') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('users.index') }}">
                                         <i class="fa-solid fa-user"></i> {{ __('Users') }}
                                     </a>
 
                                     <a class="dropdown-item" href="{{ route('products.index') }}">
-                                        <i class="fa-solid fa-cart-shopping"></i> {{ __('Products') }}
+                                        <i class="fa-solid fa-cart-shopping"></i> {{ __('Product Types') }}
+                                    </a>
+
+                                    <a class="dropdown-item" href="{{ route('devices.index') }}">
+                                        <i class="fa-solid fa-hard-drive"></i> {{ __('Devices') }}
                                     </a>
 
                                     <a class="dropdown-item" href="{{ route('parameters.index') }}">

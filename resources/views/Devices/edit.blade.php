@@ -32,7 +32,7 @@
 
             <div class="mb-3">
                 <label class="form-label">User:</label>
-                <select class="form-select" @selected($device->user->id) name="user_id">
+                <select class="form-select" @if($device->user) @selected($device->user->id) @endif name="user_id">
                     <option value=""></option>
                     @foreach($users as $user)
                         <option value="{{ $user->id }}">{{ $user->email }}</option>
