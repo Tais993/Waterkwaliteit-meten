@@ -27,7 +27,7 @@
 
             <div class="mb-3">
                 <label for="description" class="form-label">Description:</label>
-                <textarea type="text" class="form-control" name="description" required id="description" rows="5"></textarea>
+                <textarea type="text" class="form-control" name="description" required id="description" rows="5">{{ old('description', $product->description) }}</textarea>
             </div>
 
             <div class="mb-3">

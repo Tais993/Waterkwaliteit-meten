@@ -29,7 +29,7 @@ Route::controller(ArduinoController::class)->group(function () {
 });
 
 Route::post('/products/create', [DeviceTypeController::class, 'create']);
-Route::get('/products/create', [DeviceTypeController::class, 'create'])->name('products.create');
+Route::get('/products/create', [DeviceTypeController::class, 'create'])->name('productsapi.create');
 Route::get('/products', [DeviceTypeController::class, 'apiIndex'])->name('products.index');
 
 Route::middleware('auth:sanctum')->get('/devices/fetch/{id}', [DeviceController::class, 'apiFetch']);

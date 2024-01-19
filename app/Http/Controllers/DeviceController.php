@@ -56,6 +56,23 @@ class DeviceController extends Controller
 
     /**
      * @param $id
+     * @return RedirectResponse
+     */
+    public function delete($id): RedirectResponse
+    {
+        $device = Device::find($id);
+
+        if (!$device) {
+            return redirect()->route('devices.index')->with('failure', 'Product not found!');
+        }
+
+        $device->delete();
+
+        return redirect()->route('devices.index')->with('success', 'Product deleted successfully!');
+    }
+
+    /**
+     * @param $id
      * @return RedirectResponse|View
      */
     public function read($id): RedirectResponse|View
