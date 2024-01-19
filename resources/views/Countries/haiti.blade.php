@@ -69,7 +69,7 @@
                           </thead>
                           <tbody>
                               @foreach($tests as $key => $test)
-                                  <tr class="{{ $key === 0 ? 'table-primary' : '' }}" id="{{ $test->id }}">
+                                  <tr class="country-table {{ $key === 0 ? 'table-primary' : '' }}" id="{{ $test->id }}">
                                       <td class="date">
                                           {!! $key === 0 ? "<span class='score blue'>NEW</span>" : '' !!}
                                           {{ ' ' . Carbon::parse($test->tested_on)->format('Y-m-d') }}

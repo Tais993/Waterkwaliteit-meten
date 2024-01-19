@@ -31,14 +31,14 @@ function display() {
     }
 }
 
-// Get all elements with class "details-btn" (assuming you use this class for your buttons)
-let buttons = document.querySelectorAll(".details-btn");
+// Get all elements with class ".country-table"
+let rows = document.querySelectorAll(".country-table");
 
-// Set up event listeners for each button
-buttons.forEach(function (button) {
-    button.onclick = function () {
-        // Get the modal ID from the button's ID
-        let modalId = button.id;
+// Set up event listeners for each row
+rows.forEach(function (row) {
+    row.addEventListener("click", function () {
+        // Get the modal ID from the row's ID
+        let modalId = row.id;
 
         // Get the corresponding modal element
         let modal = document.getElementById('modal-' + modalId);
@@ -47,7 +47,7 @@ buttons.forEach(function (button) {
         if (modal) {
             modal.style.display = "block";
         }
-    }
+    });
 });
 
 // Set up event listener for the close button
