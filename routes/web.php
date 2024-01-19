@@ -50,19 +50,19 @@ Route::get('/store', function () {
 });
 
 Route::get('/countries/senegal', function () {
-    return view('countries/senegal');
+    return view('Countries/senegal');
 });
 
 Route::get('/countries/haiti', function () {
-    return view('countries/haiti');
+    return view('Countries/haiti');
 });
 
 Route::get('/countries/laos', function () {
-    return view('countries/laos');
+    return view('Countries/laos');
 });
 
 Route::get('/countries/netherlands', function () {
-    return view('countries/netherlands');
+    return view('Countries/netherlands');
 });
 
 

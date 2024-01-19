@@ -22,7 +22,7 @@ class DeviceController extends Controller
             // Fetch parameters and pass them to the view
             $devicetypes = DeviceType::all(); // Fetch parameters from your database
             $users = User::all();
-            return view('devices.create', compact('devicetypes', 'users'));
+            return view('Devices.create', compact('devicetypes', 'users'));
         }
 
         if ($request->isMethod('POST')) {
@@ -51,7 +51,7 @@ class DeviceController extends Controller
         // Fetching parameters without showing attached products
         $devices = Device::with('deviceType', 'user')->get()->all();
 
-        return view('devices.index', compact('devices'));
+        return view('Devices.index', compact('devices'));
     }
 
     /**
@@ -85,7 +85,7 @@ class DeviceController extends Controller
             return redirect()->route('devices.index')->with('failure', 'Product not found!');
         }
 
-        return view('devices.edit', compact('device', 'devicetypes', 'users'));
+        return view('Devices.edit', compact('device', 'devicetypes', 'users'));
     }
 
     /**
