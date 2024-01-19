@@ -61,6 +61,11 @@ Route::get('/countries/laos', function () {
     return view('countries/laos');
 });
 
+Route::get('/countries/netherlands', function () {
+    return view('countries/netherlands');
+});
+
+
 Route::middleware('auth')->group(function() {
 
     Route::get('/dashboard', fn() => view('home'))->name('dashboard');

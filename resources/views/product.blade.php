@@ -35,10 +35,20 @@
                     <div class="product-price">
                         <h2>€ {{ $product->price }}</h2>
                         <div class="stock">
-                            <div class="stock-status-instock"></div>
-                                IN STOCK
+                          @if($product->stock > 5)
+                          <div class="stock-status-instock"></div>
+                          IN STOCK
+                          @elseif($product->stock == 0)
+                          <div class="stock-status-soldout"></div>
+                          SOLD OUT
+                          @else
+                          <div class="stock-status-almostsoldout"></div>
+                          LAST ITEMS
+                          @endif
                         </div>
+                        @if($product->stock > 0)
                         <button id="buy-btn" class="product-btn" type="button"><a href="{{ route('product.checkout', $product->id) }}"><span>BUY</span></a></button>
+                        @endif
                     </div>
                 </div>
                 <div class="product-desc">

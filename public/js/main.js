@@ -31,30 +31,30 @@ function display() {
     }
 }
 
-// Get all elements with class "details-btn" (assuming you use this class for your buttons)
-let buttons = document.querySelectorAll(".details-btn");
-
-// Set up event listeners for each button
-buttons.forEach(function (button) {
-    button.onclick = function () {
-        // Get the modal ID from the button's ID
-        let modalId = button.id;
-
+// Get all elements with class ".country-table"
+let rows = document.querySelectorAll(".country-table");
+// Set up event listeners for each row
+rows.forEach(function (row) {
+    row.addEventListener("click", function () {
+        // Get the modal ID from the row's ID
+        let modalId = row.id;
         // Get the corresponding modal element
         let modal = document.getElementById('modal-' + modalId);
-
         // Open the modal
         if (modal) {
             modal.style.display = "block";
         }
-    }
+    });
 });
 
 // Set up event listener for the close button
-let span = document.getElementsByClassName("close")[0];
-span.onclick = function () {
-    closeModals();
-}
+let spans = document.querySelectorAll(".close");
+
+spans.forEach(function (span) {
+    span.onclick = function () {
+        closeModals();
+    };
+});
 
 // Set up event listener to close the modal when clicking outside it
 window.onclick = function (event) {
