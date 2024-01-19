@@ -70,6 +70,13 @@
           </div>
           <button type="button"><a href="/landen/laos"><span>MORE INFO</span></a></button>
         </div>
+        <div class="data-card">
+          <h2>NETHERLANDS</h2>
+          <div class="data-img">
+            <img src="{{ url('images/netherlands.png') }}">
+          </div>
+          <button type="button"><a href="/landen/netherlands"><span>MORE INFO</span></a></button>
+        </div>
     </div>
 
     <div id="info-cards">

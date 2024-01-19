@@ -28,7 +28,13 @@
         <a href="/store">STORE</a>
         <a href="/about">ABOUT</a>
         <a href="/contact">CONTACT</a>
-        <a href="/login">LOG IN <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i></a>
+        @if(auth()->user() && auth()->user()->isAdmin())
+            <a href="{{ route('admin.dashboard') }}">ADMIN <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i></a>
+        @elseif(!auth()->user())
+            <a href="/login">LOG IN <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i></a>
+        @else
+            <a href="/login">DASHBOARD <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i></a>
+        @endif
       </div>
     </div>
   </div>

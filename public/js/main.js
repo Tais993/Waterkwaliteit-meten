@@ -51,10 +51,13 @@ rows.forEach(function (row) {
 });
 
 // Set up event listener for the close button
-let span = document.getElementsByClassName("close")[0];
-span.onclick = function () {
-    closeModals();
-}
+let spans = document.querySelectorAll(".close");
+
+spans.forEach(function (span) {
+    span.onclick = function () {
+        closeModals();
+    };
+});
 
 // Set up event listener to close the modal when clicking outside it
 window.onclick = function (event) {
