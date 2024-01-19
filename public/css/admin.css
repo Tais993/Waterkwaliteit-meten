@@ -1,0 +1,42 @@
+:root {
+    --blue-color: #109BFF;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+      
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+    
+  ::-webkit-scrollbar-thumb {
+    background: var(--blue-color);
+  }
+    
+  ::-webkit-scrollbar-thumb:hover {
+    background: #42b0ff;
+  }
+  
+  * {
+    box-sizing: border-box;
+  
+  }
+  body {
+    margin: 0;
+    font-family: Mako, sans-serif;
+    background: #FFF !important;
+  }
+  
+  #content a {
+    text-decoration: none;
+  }
+
+  #content {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #admin-p {
+    margin: 2rem;
+  }
