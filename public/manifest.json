@@ -3,7 +3,7 @@
     "name": "Aquality",
     "short_name": "Aquality",
     "description": "The place to find waterquality tests all around the world!",
-    "start_url": "/",
+    "start_url": "https://waterkwaliteit.kaliflex.nl",
     "background_color": "#2f3d58",
     "theme_color": "#2f3d58",
     "orientation": "any",
