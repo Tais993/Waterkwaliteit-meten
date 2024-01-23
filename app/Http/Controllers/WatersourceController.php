@@ -15,6 +15,6 @@ class WatersourceController extends Controller
         // If the WaterSource is found, retrieve the related tests
         $tests = $waterSource ? $waterSource->tests()->orderBy('tested_on', 'desc')->get() : collect();
 
-        return view("countries.$country", compact('tests'));
+        return view("Countries.$country", compact('tests'));
     }
 }
