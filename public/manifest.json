@@ -1,0 +1,17 @@
+{
+    "lang": "NL-nl",
+    "name": "Aquality",
+    "short_name": "Aquality",
+    "description": "The place to find waterquality tests all around the world!",
+    "start_url": "/",
+    "background_color": "#2f3d58",
+    "theme_color": "#2f3d58",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "https://waterkwaliteit.kaliflex.nl/images/5.png",
+            "sizes": "512x512"
+        }
+    ]
+}

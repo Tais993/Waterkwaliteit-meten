@@ -12,6 +12,7 @@
     <link href="{{ url("/css/style.css") }}" rel="stylesheet">
     <link href="{{ url("/css/bootstrap.css") }}" rel="stylesheet">
     <script src="{{ url("/js/bootstrap.js") }}"></script>
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
 
     <link rel="icon" type="image/x-icon" href="{{ url('images/5.png') }}">
 </head>
@@ -30,9 +31,9 @@
         @endif
         <h1>GREAT WATER QUALITY FOR EVERYONE</h1>
         <p>
-          Welcome to AQUALITY, where we are committed to measuring 
-          water quality in Africa, South America, and Asia, and making 
-          these results available to the world. Discover how we harness 
+          Welcome to AQUALITY, where we are committed to measuring
+          water quality in Africa, South America, and Asia, and making
+          these results available to the world. Discover how we harness
           the power of technology to map water quality globally.
         </p>
       </div>
@@ -88,11 +89,11 @@
         <div id="content">
           <p>
             <strong>Why Water Quality Matters</strong><br><br>
-            Clean water sources are essential for the well-being 
-            of communities worldwide. At AQUALITY, we understand 
-            that water quality directly impacts health and quality 
-            of life. Explore the challenges we face and how our 
-            work contributes to improving water quality, which 
+            Clean water sources are essential for the well-being
+            of communities worldwide. At AQUALITY, we understand
+            that water quality directly impacts health and quality
+            of life. Explore the challenges we face and how our
+            work contributes to improving water quality, which
             in turn enhances a healthier living environment for everyone.
           </p>
         </div>
